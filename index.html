@@ -10,15 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#EEF0EA;
-    --panel:#E1E6DA;
-    --ink:#1A241E;
-    --ink-soft:#4C5A50;
-    --line:#C6CDBC;
-    --green:#2F6F4E;
-    --green-soft:#3F8261;
-    --ochre:#B8842E;
-    --rust:#A23E36;
+    --paper:#1E1730;
+    --panel:#2A2141;
+    --ink:#EFE9F9;
+    --ink-soft:#B3A4CC;
+    --line:#3D3358;
+    --green:#C3A6EF;
+    --green-soft:#D6BFF7;
+    --ochre:#E0B458;
+    --rust:#E08A7D;
     --term-bg:#F5F1FB;
     --term-text:#4A3B63;
     --term-dim:#8A76A8;
@@ -62,7 +62,7 @@
     position:sticky;
     top:0;
     z-index:20;
-    background:rgba(238,240,234,0.92);
+    background:rgba(30,23,48,0.88);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
@@ -416,6 +416,24 @@
     color:var(--green);
   }
 
+  /* CLIENT STRIP */
+  .client-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px 40px;
+  }
+  .client-strip span{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    opacity:0.7;
+    transition:opacity 0.2s ease, color 0.2s ease;
+  }
+  .client-strip span:hover{
+    opacity:1;
+    color:var(--ink);
+  }
+
   /* CERTS + LANG */
   .cert-grid{
     display:grid;
@@ -672,6 +690,22 @@
           <li>Colaboré en la adopción de Scrum ágil dentro del proyecto.</li>
           <li>Construí un tablero en Power BI para seguir mes a mes la mejora de procesos contables.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes">
+    <div class="wrap">
+      <p class="eyebrow-label">Confianza</p>
+      <h2>Empresas con las que trabajé</h2>
+      <div class="client-strip">
+        <span>GlobalLogic</span>
+        <span>IBM</span>
+        <span>Axoft</span>
+        <span>EY</span>
+        <span>Claro</span>
+        <span>Banco Galicia</span>
+        <span>VUCE</span>
       </div>
     </div>
   </section>
