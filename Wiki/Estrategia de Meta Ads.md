@@ -7,10 +7,10 @@ Estas son las reglas de prueba y apagado que sigo con mi asesora, según una gu�
 - Campaña de tráfico de 3 a 5 USD al arrancar una cuenta nueva, y después se apaga.
 
 ## Reglas de apagado (según el gasto acumulado de cada anuncio)
-- **Hacia 6 USD:** apagar si el CTR del enlace es menor de 1,5 % (2 % en anuncios de imagen).
+- **Hacia 6 USD:** apagar si el CTR del enlace es menor de 1,5 % en vídeo, o de 2 % en imagen y carrusel. (La hoja de métricas del 16/11 incluye el carrusel en el umbral del 2 %; la guía original solo nombra la imagen.)
 - **Hacia 8 USD:** apagar si tiene menos de 2 añadidos al carrito.
 - **10 USD sin ventas:** apagar.
-- **Si vende:** se deja encendido hasta superar el CPA de equilibrio, aunque tenga un mal día.
+- **Si vende:** se deja encendido hasta superar el CPA de equilibrio, aunque tenga un mal día, y se hacen creativos parecidos.
 - **Si ningún anuncio llega a 10 USD con ventas:** hacer creativos nuevos. Probar al menos 20 antes de cambiar de producto.
 
 ## Diagnóstico
@@ -45,3 +45,4 @@ Fuentes:
 - Raw/2026-11-16 Oferta Impultienda (pegado).md
 - Raw/2026-11-16 Comision Impultienda (respuesta).md
 - Raw/2026-11-16 Comision pasarela y moneda Meta (respuesta).md
+- Raw/2026-11-16 Metricas del dia.md
