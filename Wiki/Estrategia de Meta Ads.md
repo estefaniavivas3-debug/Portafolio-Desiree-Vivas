@@ -20,9 +20,20 @@ Estas son las reglas de prueba y apagado que sigo con mi asesora, según una gu�
 - Impultienda no avisa de las ventas por transferencia: hay que revisarlas a mano.
 
 > Confirmado por Desiree: es la misma regla que sigue con su asesora (6 USD → CTR; 10 USD → ventas).
-## CPA de equilibrio (borrador)
-- Con el producto principal solo: el CPA de equilibrio es como máximo **$16.990 ARS** por venta, antes de las comisiones de Impultienda y del pago (que no tengo).
-- Si una parte de los compradores añade productos adicionales, el ticket medio sube y el CPA tolerable también. Hasta $43.380 si alguien compra todo.
+## CPA de equilibrio
+Impultienda cobra un **5 % por venta**. Lo que queda por cada producto, después de esa comisión:
+
+| Producto | Precio | Neto (−5 %) |
+|---|---|---|
+| Ebook principal | $16.990 | **$16.140** |
+| Order bump: Guía de examen | $6.990 | $6.640 |
+| Order bump: Aprendé a programar | $10.500 | $9.975 |
+| Upsell: Plan de estudio | $8.900 | $8.455 |
+| Todo junto | $43.380 | $41.211 |
+
+- **CPA de equilibrio si solo se vende el ebook: unos $16.140 ARS.** Si cada venta cuesta más en anuncios, se pierde dinero.
+- Cada comprador que añade order bumps o el upsell sube el ticket medio, y con él el CPA que te puedes permitir.
+- Falta saber si hay otra comisión de la pasarela de pago (por ejemplo, Mercado Pago). No está en el vault.
 - Para compararlo con un gasto en USD hace falta el tipo de cambio con el que cobra Meta. No lo tengo en el vault.
 
 Relacionado: [[Meta Ads - resultados]], [[Estudia con IA]].
@@ -32,3 +43,4 @@ Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
 - Raw/2026-11-16 Oferta Impultienda (pegado).md
+- Raw/2026-11-16 Comision Impultienda (respuesta).md
