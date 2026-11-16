@@ -11,12 +11,14 @@ Producto principal: **«IA para Estudiar: Aprobá con ChatGPT y Claude»**. Prec
 - Tutores IA por materia ($7.800)
 - Flashcards con IA ($12.800)
 
-**Productos adicionales de pago** (precio de venta / precio tachado):
-- Plan de estudio con IA para todo el cuatrimestre: $8.900 / $16.000
-- Aprendé a programar más rápido usando la IA como tu tutor personal: $10.500 / $35.000
+**Order bumps** (se ofrecen antes de pagar; precio de venta / precio tachado):
 - Guía de examen: escritos y orales: $6.990 / $14.990
+- Aprendé a programar más rápido usando la IA como tu tutor personal: $10.500 / $35.000
 
-> ⚠️ Por confirmar: el texto pegado tiene los precios en una sola columna. He interpretado que cada producto va seguido de su precio actual y después de su precio tachado (o valor de referencia). Falta confirmar también cuál de los adicionales es el upsell y cuáles son order bumps, si los hay.
+**Upsell** (se ofrece después de pagar):
+- Plan de estudio con IA para todo el cuatrimestre: $8.900 / $16.000
+
+> ⚠️ Por confirmar: el texto pegado tiene los precios en una sola columna. He interpretado que cada producto va seguido de su precio actual y después de su precio tachado (o valor de referencia).
 
 Ticket máximo si alguien compra todo: $16.990 + $8.900 + $10.500 + $6.990 = **$43.380**.
 
@@ -33,3 +35,4 @@ Vender por Impultienda y conseguir visitas en Facebook e Instagram (ver [[Objeti
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Oferta Impultienda (pegado).md
+- Raw/2026-11-16 Estructura del embudo (respuesta).md
