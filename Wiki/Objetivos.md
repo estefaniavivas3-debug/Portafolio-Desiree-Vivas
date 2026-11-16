@@ -7,6 +7,7 @@ Mi objetivo principal es vender: que Estudia con IA genere ventas en Impultienda
 - Pasar de perder dinero a ser rentable en Meta Ads ([[Meta Ads - resultados]]).
 - Conseguir visitas en Facebook e Instagram y saber qué contenido publicar ([[Redes sociales y contenido]]).
 - Mejorar en edición de vídeo.
+- Conseguir más clientas para las asesorías de lactancia ([[Puericultura y lactancia materna]]).
 
 ## Personal
 - Libertad financiera ([[Finanzas]]).
@@ -15,3 +16,4 @@ Mi objetivo principal es vender: que Estudia con IA genere ventas en Impultienda
 
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
+- Raw/2026-11-16 Aclaraciones entrevista.md

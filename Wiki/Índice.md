@@ -30,3 +30,4 @@ Mapa del segundo cerebro de Desiree Vivas: quién es, su negocio Estudia con IA,
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Guia Meta Ads (resumen del enlace).md
+- Raw/2026-11-16 Aclaraciones entrevista.md
