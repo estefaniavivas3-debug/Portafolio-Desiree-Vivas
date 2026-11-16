@@ -31,3 +31,4 @@ Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Guia Meta Ads (resumen del enlace).md
 - Raw/2026-11-16 Aclaraciones entrevista.md
+- Raw/2026-11-16 Oferta Impultienda (pegado).md

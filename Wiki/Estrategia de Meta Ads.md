@@ -20,7 +20,10 @@ Estas son las reglas de prueba y apagado que sigo con mi asesora, según una gu�
 - Impultienda no avisa de las ventas por transferencia: hay que revisarlas a mano.
 
 > Confirmado por Desiree: es la misma regla que sigue con su asesora (6 USD → CTR; 10 USD → ventas).
-> Falta calcular el CPA de equilibrio con el precio real del ebook.
+## CPA de equilibrio (borrador)
+- Con el producto principal solo: el CPA de equilibrio es como máximo **$16.990 ARS** por venta, antes de las comisiones de Impultienda y del pago (que no tengo).
+- Si una parte de los compradores añade productos adicionales, el ticket medio sube y el CPA tolerable también. Hasta $43.380 si alguien compra todo.
+- Para compararlo con un gasto en USD hace falta el tipo de cambio con el que cobra Meta. No lo tengo en el vault.
 
 Relacionado: [[Meta Ads - resultados]], [[Estudia con IA]].
 
@@ -28,3 +31,4 @@ Fuentes:
 - Raw/2026-11-16 Guia Meta Ads (resumen del enlace).md
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
+- Raw/2026-11-16 Oferta Impultienda (pegado).md
