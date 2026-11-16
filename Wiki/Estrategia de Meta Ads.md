@@ -21,20 +21,20 @@ Estas son las reglas de prueba y apagado que sigo con mi asesora, según una gu�
 
 > Confirmado por Desiree: es la misma regla que sigue con su asesora (6 USD → CTR; 10 USD → ventas).
 ## CPA de equilibrio
-Impultienda cobra un **5 % por venta**. Lo que queda por cada producto, después de esa comisión:
+Comisiones por venta: **Impultienda 5 %** + **pasarela de pago ~1 %** = **~6 %**. Lo que queda por cada producto:
 
-| Producto | Precio | Neto (−5 %) |
+| Producto | Precio | Neto (−6 %) |
 |---|---|---|
-| Ebook principal | $16.990 | **$16.140** |
-| Order bump: Guía de examen | $6.990 | $6.640 |
-| Order bump: Aprendé a programar | $10.500 | $9.975 |
-| Upsell: Plan de estudio | $8.900 | $8.455 |
-| Todo junto | $43.380 | $41.211 |
+| Ebook principal | $16.990 | **$15.970** |
+| Order bump: Guía de examen | $6.990 | $6.570 |
+| Order bump: Aprendé a programar | $10.500 | $9.870 |
+| Upsell: Plan de estudio | $8.900 | $8.366 |
+| Todo junto | $43.380 | $40.777 |
 
-- **CPA de equilibrio si solo se vende el ebook: unos $16.140 ARS.** Si cada venta cuesta más en anuncios, se pierde dinero.
+- **CPA de equilibrio si solo se vende el ebook: unos $15.970 ARS.**
+- Meta cobra en **dólares**, al tipo de cambio que aplique la tarjeta o el banco.
+- **CPA de equilibrio en USD = $15.970 ÷ tipo de cambio real** (el que aparece en el resumen de la tarjeta, impuestos incluidos). El tipo de cambio todavía no está en el vault.
 - Cada comprador que añade order bumps o el upsell sube el ticket medio, y con él el CPA que te puedes permitir.
-- Falta saber si hay otra comisión de la pasarela de pago (por ejemplo, Mercado Pago). No está en el vault.
-- Para compararlo con un gasto en USD hace falta el tipo de cambio con el que cobra Meta. No lo tengo en el vault.
 
 Relacionado: [[Meta Ads - resultados]], [[Estudia con IA]].
 
@@ -44,3 +44,4 @@ Fuentes:
 - Raw/2026-11-16 Aclaraciones entrevista.md
 - Raw/2026-11-16 Oferta Impultienda (pegado).md
 - Raw/2026-11-16 Comision Impultienda (respuesta).md
+- Raw/2026-11-16 Comision pasarela y moneda Meta (respuesta).md
