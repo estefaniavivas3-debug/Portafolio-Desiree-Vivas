@@ -2,8 +2,14 @@
 
 Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar una campaña de Meta con más puntos de dolor del cliente.
 
-- [~] Campaña con más puntos de dolor: lanzada el 16/11 con 4 ángulos ([[Campaña de ventas 2026-11-16]]). Falta ver qué ángulo vende.
-- [ ] 17/11: revisar cada anuncio a los USD 6 (CTR) y a los USD 8 (carritos).
+- [x] Campaña con más puntos de dolor: lanzada el 16/11. Ganadores: «Finales de diciembre» y el carrusel de carreras ([[Campaña de ventas 2026-11-16]]).
+- [x] 17/11: revisar los anuncios a los USD 6 y a los USD 8. Se apagaron «Todos usan IA» y Simulacro Derecho.
+- [ ] Crear «Finales» v2 (otra materia, la misma cuenta regresiva).
+- [ ] Crear el carrusel 2 de carreras (Medicina, Nutrición, Docentes, Kinesiología, Administración).
+- [ ] Vigilar a los ganadores: apagar si llegan a USD 22 con una sola venta; subir un 20 % cada 2 días si vuelven a vender.
+- [ ] Duplicar el conjunto de tráfico a Instagram: solo Feed y Stories, USD 3 al día, con la imagen del regalo «GUÍA». Revisar en 3 o 4 días.
+- [ ] Actualizar la biografía de Instagram, fijar los posts y crear las historias destacadas ([[Redes sociales y contenido]]).
+- [ ] Decidir: ¿el seguidor objetivo es a USD 0,30 o a USD 0,40? ¿El límite de un anuncio que vende es el CPA de equilibrio o USD 22?
 - [ ] Compartir el carrusel de tesis en historias con la encuesta «¿Estás con la tesis? Sí / No».
 - [ ] Comprobar que funcionan las respuestas automáticas «GUÍA» y «TESIS».
 - [ ] Medir otra vez el carrusel de tesis el 17 o 18/11.
@@ -24,3 +30,4 @@ Fuentes:
 - Raw/2026-11-16 Comision Impultienda (respuesta).md
 - Raw/2026-11-16 Comision pasarela y moneda Meta (respuesta).md
 - Raw/2026-11-16 Metricas del dia.md
+- Raw/2026-11-17 Metricas acumuladas 16-17.md

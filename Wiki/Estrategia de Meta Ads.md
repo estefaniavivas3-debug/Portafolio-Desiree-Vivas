@@ -8,9 +8,15 @@ Estas son las reglas de prueba y apagado que sigo con mi asesora, según una gu�
 
 ## Reglas de apagado (según el gasto acumulado de cada anuncio)
 - **Hacia 6 USD:** apagar si el CTR del enlace es menor de 1,5 % en vídeo, o de 2 % en imagen y carrusel. (La hoja de métricas del 16/11 incluye el carrusel en el umbral del 2 %; la guía original solo nombra la imagen.)
-- **Hacia 8 USD:** apagar si tiene menos de 2 añadidos al carrito.
+- **Hacia 8 USD:** apagar si tiene menos de 2 añadidos al carrito. **En mi página se usa «pago iniciado»**, porque no registra «añadir al carrito» (desde el 17/11). El vídeo Simulacro Derecho se apagó por no tener ningún pago iniciado a unos 8 USD.
 - **10 USD sin ventas:** apagar.
 - **Si vende:** se deja encendido hasta superar el CPA de equilibrio, aunque tenga un mal día, y se hacen creativos parecidos.
+- **Límite para un anuncio que vende (17/11):** si llega a USD 22 con una sola venta, se apaga.
+- **Escalar (17/11):** si los ganadores vuelven a vender, subir el presupuesto un 20 % cada 2 días.
+
+> ⚠️ **Para decidir:** la guía dice que un anuncio que vende se deja encendido «hasta superar su CPA de equilibrio». Ese CPA son unos USD 10,3, mientras que el límite nuevo es de USD 22 con una venta, más del doble. Con ese límite se puede perder hasta unos USD 11,7 por anuncio antes de apagarlo. Puede tener sentido para darle tiempo, pero es una regla distinta: ¿cuál usamos?
+
+> Nota (17/11): el carrusel «Buscá tu carrera» bajó al 1,7 % de CTR, por debajo del 2 %, pero sigue encendido porque ya vendió. La regla de «si vende, se deja» manda sobre la del CTR.
 - **Si ningún anuncio llega a 10 USD con ventas:** hacer creativos nuevos. Probar al menos 20 antes de cambiar de producto.
 
 ## Diagnóstico
@@ -33,7 +39,8 @@ Comisiones por venta: **Impultienda 5 %** + **pasarela de pago ~1 %** = **~6 %**
 
 - **CPA de equilibrio si solo se vende el ebook: unos $15.970 ARS.**
 - Meta cobra en **dólares**, al tipo de cambio que aplique la tarjeta o el banco.
-- **CPA de equilibrio en USD = $15.970 ÷ tipo de cambio real** (el que aparece en el resumen de la tarjeta, impuestos incluidos). El tipo de cambio todavía no está en el vault.
+- **CPA de equilibrio en USD = $15.970 ÷ tipo de cambio real** (el que aparece en el resumen de la tarjeta, impuestos incluidos).
+- **Estimación (17/11):** Meta valora cada venta del ebook en USD 10,94. Eso da un cambio implícito de unos $1.553 por USD y un **CPA de equilibrio de unos USD 10,3**. Hay que confirmarlo con el resumen de la tarjeta.
 - Cada comprador que añade order bumps o el upsell sube el ticket medio, y con él el CPA que te puedes permitir.
 
 Relacionado: [[Meta Ads - resultados]], [[Estudia con IA]].
@@ -46,3 +53,4 @@ Fuentes:
 - Raw/2026-11-16 Comision Impultienda (respuesta).md
 - Raw/2026-11-16 Comision pasarela y moneda Meta (respuesta).md
 - Raw/2026-11-16 Metricas del dia.md
+- Raw/2026-11-17 Metricas acumuladas 16-17.md
