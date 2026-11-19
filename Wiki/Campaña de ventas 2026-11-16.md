@@ -52,8 +52,14 @@ Importes en USD. La columna «Ángulo / dolor» es mi interpretación a partir d
 
 > ⚠️ **Contradicción:** el 16/11 el objetivo era **seguidor nuevo a menos de USD 0,30**, y el 17/11 la regla dice **menos de USD 0,40**. ¿Cuál vale?
 
+## Actualización 19/11
+- Desiree volvió a lanzar la campaña de tráfico y el 18/11 lanzó un testeo nuevo.
+- Hasta el 19/11 no hubo ventas nuevas: siguen siendo 2 en total.
+- Faltan las métricas: gasto por anuncio, CTR, visitas y pagos iniciados. Tampoco sé si el testeo nuevo incluye «Finales» v2 o el carrusel 2 de carreras, ni si ya se publicó la landing v2.
+
 Relacionado: [[Meta Ads - resultados]], [[Estrategia de Meta Ads]], [[Cliente ideal de Estudia con IA]], [[Redes sociales y contenido]], [[Pendientes]].
 
 Fuentes:
 - Raw/2026-11-16 Metricas del dia.md
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
+- Raw/2026-11-19 Estado campañas (mensaje).md
