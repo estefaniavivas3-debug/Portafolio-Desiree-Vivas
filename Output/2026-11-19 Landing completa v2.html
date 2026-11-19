@@ -1,0 +1,1169 @@
+<meta charset="utf-8">
+<title>IA para Estudiar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Caveat:wght@600&display=swap">
+<style>
+/* Layout: una sola columna mobile-first, como una hoja de carpeta cuadriculada; el resaltador marca lo importante. */
+:root{
+  /* paleta: crema, violeta profundo y amarillo (botones) */
+  --paper:#f8f5ef; --paper-2:#f5f0fd; --ink:#1d1640; --ink-soft:#4a4468; --line:#e6e0f0;
+  --brand:#672a9d; --brand-ink:#ffffff; --coral:#ec5f32; --coral-ink:#ffffff; --mint:#12a38a;
+  --cta:#f5c451; --cta-ink:#1d1640;
+  --marker:#f5c451; --marker-ink:#1d1640; --grid:rgba(103,42,157,.06); --card:#ffffff; --danger:#d64532;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-hand:"Caveat", "Comic Sans MS", cursive;
+  --r:14px; --max:1080px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1d1640; --paper-2:#271d57; --ink:#f8f5ef; --ink-soft:#c9c2e0; --line:#3a2f72;
+  --brand:#b48cf0; --brand-ink:#1d1640; --coral:#ff8a5c; --coral-ink:#1d1640; --mint:#3fd0b2;
+  --cta:#f5c451; --cta-ink:#1d1640;
+  --marker:#f5c451; --marker-ink:#1d1640; --grid:rgba(180,140,240,.07); --card:#2a1b5e; --danger:#ff7a66; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1d1640; --paper-2:#271d57; --ink:#f8f5ef; --ink-soft:#c9c2e0; --line:#3a2f72;
+  --brand:#b48cf0; --brand-ink:#1d1640; --coral:#ff8a5c; --coral-ink:#1d1640; --mint:#3fd0b2;
+  --cta:#f5c451; --cta-ink:#1d1640;
+  --marker:#f5c451; --marker-ink:#1d1640; --grid:rgba(180,140,240,.07); --card:#2a1b5e; --danger:#ff7a66; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--f-display);line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,6vw,44px);font-weight:800}
+h3{font-size:20px;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:18px}
+section{padding-block:64px}
+.eyebrow{font:600 13px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+.lead{font-size:19px;color:var(--ink-soft);max-width:62ch}
+.mark{color:var(--brand);font-weight:700}
+.hand{font-family:var(--f-hand);font-weight:600;color:var(--coral);font-size:26px;line-height:1}
+.stack{display:flex;flex-direction:column;gap:18px}
+
+/* barra superior */
+.topbar{background:var(--brand);color:var(--brand-ink);text-align:center;font:700 17px/1.45 var(--f-body);padding:14px 16px}
+.topbar b{display:inline-block;background:var(--marker);color:var(--marker-ink);font:800 19px/1 var(--f-display);padding:5px 10px;border-radius:7px;margin:0 2px}
+@media (min-width:860px){.topbar{font-size:19px;padding:16px}.topbar b{font-size:22px}}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:var(--cta-ink);font:700 18px/1 var(--f-body);text-decoration:none;padding:20px 28px;border-radius:999px;box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .15s ease, box-shadow .15s ease;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.btn:focus-visible,.faq summary:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.btn.block{width:100%}
+.micro{font-size:14px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center}
+.micro span::before{content:"✓ ";color:var(--mint);font-weight:700}
+
+/* hero */
+.hero{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;padding-block:44px 56px}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+.hero h1{font-size:clamp(38px,9vw,68px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero-copy{display:flex;flex-direction:column;gap:20px;min-width:0}
+.mock{position:relative;display:flex;justify-content:center;align-items:flex-end;padding:10px 0 26px;min-width:0}
+.mock .main{width:min(260px,62%);border-radius:6px;box-shadow:0 30px 50px -20px rgba(20,18,60,.55), -8px 0 0 -2px rgba(0,0,0,.08);transform:rotate(-3deg);position:relative;z-index:3}
+.mock .b{width:min(130px,31%);border-radius:5px;box-shadow:0 18px 30px -14px rgba(20,18,60,.5);position:absolute;bottom:20px}
+.mock .b1{left:2%;transform:rotate(-9deg);z-index:1}
+.mock .b2{right:2%;transform:rotate(8deg);z-index:2}
+.mock .note{position:absolute;top:0;right:4%;z-index:4;transform:rotate(6deg);text-align:center}
+.priceline{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.price{font:800 44px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.was{color:var(--ink-soft);text-decoration:line-through;font-size:18px}
+.chip{background:var(--marker);color:var(--marker-ink);font:700 13px/1 var(--f-body);padding:7px 10px;border-radius:6px}
+.buybox{display:flex;flex-direction:column;align-items:center;gap:14px;align-self:stretch;text-align:center}
+.buybox .btn{width:100%}
+.buybox .pay2{width:100%;margin-top:0}
+.buybox .micro{justify-content:center}
+@media (min-width:860px){.buybox{align-self:flex-start}.buybox .btn{width:auto;padding-inline:40px}}
+.cuotas{font:500 16px/1.3 var(--f-body);color:var(--ink-soft)}
+.cuotas b{color:var(--mint)}
+.today .cuotas{flex-basis:100%;text-align:right;font-size:15px}
+.pm .pm-s{font:600 11px/1.2 var(--f-body);color:var(--mint)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;font-size:15px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.facts b{display:block;font:800 22px/1.1 var(--f-display);color:var(--brand)}
+
+/* dolores */
+.pains{background:var(--paper-2)}
+.pain-list{display:grid;gap:14px;margin-top:28px}
+.pain{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.pain .x{width:30px;height:30px;border-radius:50%;background:var(--coral);color:var(--coral-ink);display:grid;place-items:center;font-weight:800}
+.pain h3{font-size:18px;margin-bottom:4px}
+.pain p{color:var(--ink-soft);font-size:16px}
+
+/* comparación */
+.vs{display:grid;gap:16px;margin-top:28px}
+.vs-col{border-radius:var(--r);padding:22px;border:1px solid var(--line);background:var(--card);min-width:0}
+.vs-col.good{border:2px solid var(--mint)}
+.vs-col h3{margin-bottom:12px}
+.vs-col ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.vs-col.bad li::marker{content:"✕  ";color:var(--danger)}
+.vs-col.good li::marker{content:"✓  ";color:var(--mint)}
+/* tabla comparativa: grilla de 3 columnas en la compu, tarjetas apiladas en el celu */
+.cmp{margin-top:28px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
+.cmp-head{display:none}
+.cmp-row{display:grid;gap:8px;padding:16px 18px;border-top:1px solid var(--line)}
+.cmp-head+.cmp-row{border-top:0}
+.cmp-row b{font:700 17px/1.3 var(--f-display);color:var(--ink)}
+.cmp-row span{font-size:15px;line-height:1.45;padding-left:26px;position:relative}
+.cmp-row .no{color:var(--ink-soft)}
+.cmp-row .yes{color:var(--ink);font-weight:600}
+.cmp-row .no::before,.cmp-row .yes::before{position:absolute;left:0;top:0;font-weight:800}
+.cmp-row .no::before{content:"✕";color:var(--danger)}
+.cmp-row .yes::before{content:"✓";color:var(--mint)}
+.case{margin-top:26px;display:grid;gap:10px;background:var(--paper-2);border-radius:var(--r);padding:22px}
+.case p{color:var(--ink-soft)}
+@media (min-width:860px){
+  .cmp-head,.cmp-row{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:18px;align-items:start}
+  .cmp-head{padding:14px 22px;background:var(--brand);color:var(--brand-ink);font:700 14px/1.2 var(--f-body);letter-spacing:.04em}
+  .cmp-row{padding:16px 22px}
+  .cmp-head+.cmp-row{border-top:1px solid var(--line)}
+}
+.prompt-demo{margin-top:22px;display:grid;gap:12px}
+.bubble{border-radius:16px;padding:16px 18px;font-size:16px}
+.bubble small{display:block;font:700 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.bubble.weak{background:var(--paper-2);color:var(--ink-soft)}
+.bubble.weak small{color:var(--danger)}
+.bubble.strong{background:var(--brand);color:var(--brand-ink)}
+.bubble.strong small{color:var(--marker)}
+
+/* ciclo */
+.cycle{display:grid;gap:14px;margin-top:28px;counter-reset:step}
+.step{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:18px 0;border-top:2px dashed var(--line)}
+.step::before{counter-increment:step;content:counter(step);font:800 42px/1 var(--f-display);color:var(--coral);width:44px}
+.step h3{margin-bottom:4px}
+.step p{color:var(--ink-soft)}
+
+/* contenido */
+.toc{display:grid;gap:10px;margin-top:28px}
+.toc details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0}
+.toc summary{cursor:pointer;list-style:none;padding:16px 18px;font:700 17px/1.3 var(--f-display);display:flex;justify-content:space-between;gap:10px}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary span{color:var(--ink-soft);font:500 14px/1.3 var(--f-body);white-space:nowrap}
+.toc ol{margin:0;padding:0 18px 16px 40px;color:var(--ink-soft);font-size:15px;display:flex;flex-direction:column;gap:4px}
+/* contenido en pestañas: en el celu las partes se deslizan de costado y los capítulos se leen en tarjetas grandes */
+.tabs{margin-top:26px}
+.tabs input{position:absolute;opacity:0;pointer-events:none}
+.tab-bar{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 18px 12px;margin-inline:-18px;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-bar label{flex:none;scroll-snap-align:start;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:2px;min-width:150px;transition:background .15s ease,border-color .15s ease}
+.tab-bar b{font:700 16px/1.2 var(--f-display);color:var(--ink)}
+.tab-bar small{font:500 13px/1.2 var(--f-body);color:var(--ink-soft)}
+#pt1:checked~.tab-bar [for=pt1],#pt2:checked~.tab-bar [for=pt2],#pt3:checked~.tab-bar [for=pt3],#pt4:checked~.tab-bar [for=pt4],#pt5:checked~.tab-bar [for=pt5],#pt6:checked~.tab-bar [for=pt6]{background:var(--brand);border-color:var(--brand)}
+#pt1:checked~.tab-bar [for=pt1] *,#pt2:checked~.tab-bar [for=pt2] *,#pt3:checked~.tab-bar [for=pt3] *,#pt4:checked~.tab-bar [for=pt4] *,#pt5:checked~.tab-bar [for=pt5] *,#pt6:checked~.tab-bar [for=pt6] *{color:var(--brand-ink)}
+#pt1:focus-visible~.tab-bar [for=pt1],#pt2:focus-visible~.tab-bar [for=pt2],#pt3:focus-visible~.tab-bar [for=pt3],#pt4:focus-visible~.tab-bar [for=pt4],#pt5:focus-visible~.tab-bar [for=pt5],#pt6:focus-visible~.tab-bar [for=pt6]{outline:3px solid var(--mint);outline-offset:2px}
+.caps{display:none;list-style:none;margin:6px 0 0;padding:0;gap:10px}
+#pt1:checked~.tab-panels .p1,#pt2:checked~.tab-panels .p2,#pt3:checked~.tab-panels .p3,#pt4:checked~.tab-panels .p4,#pt5:checked~.tab-panels .p5,#pt6:checked~.tab-panels .p6{display:grid}
+.caps li{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:500 16px/1.4 var(--f-body);color:var(--ink)}
+.caps i{flex:none;font:800 15px/1 var(--f-display);font-style:normal;color:var(--coral-ink);background:var(--coral);width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
+.tab-hint{margin-top:12px;font:600 13px/1.3 var(--f-body);color:var(--ink-soft)}
+@media (min-width:860px){
+  .tab-bar{overflow:visible;flex-wrap:wrap;margin-inline:0;padding-inline:0}
+  .tab-bar label{flex:1;min-width:0}
+  .caps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .caps li.wide{grid-column:1/-1}
+  .tab-hint{display:none}
+}
+/* reseñas: cinta que avanza sola; se frena al tocarla o pasar el mouse. Las tarjetas van duplicadas para que el loop no corte. */
+.reviews{overflow:hidden;margin-top:28px;margin-inline:-18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rv-track{display:flex;gap:14px;width:max-content;padding:4px 18px;animation:rv-scroll 40s linear infinite}
+.reviews:hover .rv-track,.reviews:active .rv-track,.reviews:focus-within .rv-track{animation-play-state:paused}
+@keyframes rv-scroll{to{transform:translateX(-50%)}}
+.rv{flex:none;width:280px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:12px}
+.rv .stars{color:#f5b301;letter-spacing:2px;font-size:15px}
+.rv p{font-size:15px;line-height:1.5;color:var(--ink)}
+.rv footer{all:unset;display:flex;align-items:center;gap:10px;margin-top:auto}
+.rv .av{width:36px;height:36px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font:800 14px/1 var(--f-display);flex:none}
+.rv b{display:block;font:700 14px/1.2 var(--f-body)}
+.rv small{font-size:12.5px;color:var(--ink-soft)}
+.rv .grade{display:inline-block;align-self:flex-start;background:rgba(18,163,138,.14);color:var(--mint);font:700 12px/1 var(--f-body);padding:5px 9px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.rv-track{animation:none}.reviews{overflow-x:auto}}
+.peek{display:grid;gap:22px;align-items:center;margin-top:36px}
+.peek img{border-radius:8px;box-shadow:0 24px 40px -22px rgba(20,18,60,.5);border:1px solid var(--line);max-width:420px;width:100%;justify-self:center}
+
+/* oferta */
+.offer{background:var(--brand);color:var(--brand-ink)}
+.offer h2,.offer .eyebrow{color:var(--brand-ink)}
+.offer .eyebrow{opacity:.8}
+.stack-card{background:var(--card);color:var(--ink);border-radius:20px;padding:22px;margin-top:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--line)}
+.item img{width:64px;border-radius:4px;box-shadow:0 6px 14px -8px rgba(0,0,0,.5)}
+.item h3{font-size:17px}
+.item p{font-size:14px;color:var(--ink-soft)}
+.item .v{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:15px;white-space:nowrap}
+.item .v s{display:block;text-align:right;font-size:13px}
+.item .free{display:block;text-align:right;color:var(--mint);font:800 15px/1.2 var(--f-body);letter-spacing:.06em}
+.item .tag{display:inline-block;background:var(--mint);color:var(--paper);font:700 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:5px;margin-bottom:4px}
+.item .tag.new{background:var(--coral);color:var(--coral-ink);margin-left:4px}
+.total{display:flex;justify-content:space-between;gap:12px;padding:16px 0 4px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.total s{font-size:18px}
+.today{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0 18px;flex-wrap:wrap}
+.today .price{color:var(--coral)}
+.pay{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.pay span{border:1px solid var(--line);border-radius:6px;padding:5px 9px;font-size:13px;color:var(--ink-soft)}
+
+/* para quién */
+.fit{display:grid;gap:16px;margin-top:28px}
+.fit .vs-col h3{display:flex;align-items:center;gap:8px}
+
+/* garantía */
+.guarantee{display:grid;gap:22px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:26px}
+.seal{width:132px;height:132px;border-radius:50%;border:3px dashed var(--mint);display:grid;place-items:center;text-align:center;justify-self:center;transform:rotate(-8deg)}
+.seal b{display:block;font:800 46px/1 var(--f-display);color:var(--mint)}
+.seal span{font:700 12px/1.2 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* faq */
+.faq{display:grid;gap:10px;margin-top:28px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font:700 18px/1.35 var(--f-display);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font:500 28px/1 var(--f-body);color:var(--coral)}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 18px;color:var(--ink-soft);max-width:65ch}
+
+/* cierre */
+.final{text-align:center}
+.final .stack{align-items:center}
+footer{border-top:1px solid var(--line);padding-block:26px 100px;color:var(--ink-soft);font-size:14px;text-align:center}
+.brand-foot{display:flex;flex-direction:column;gap:8px;align-items:center}
+.brand-foot b{color:var(--ink)}
+.brand-links a{color:var(--mint);font-weight:700;text-decoration:none}
+.brand-links a:hover{text-decoration:underline}
+
+/* barra fija mobile */
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:20;box-shadow:0 -10px 30px -18px rgba(0,0,0,.4)}
+.sticky .p{font:800 22px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.sticky .p small{display:block;font:500 12px/1.2 var(--f-body);color:var(--ink-soft)}
+.sticky .btn{padding:14px 20px;font-size:16px;box-shadow:none}
+
+@media (min-width:860px){
+  section{padding-block:90px}
+  .hero .wrap{grid-template-columns:1.1fr .9fr}
+  .pain-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vs,.fit{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prompt-demo{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cycle{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .step{grid-template-columns:1fr;border-top:none;border-left:2px dashed var(--line);padding:0 0 0 18px}
+  .toc{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .peek{grid-template-columns:1fr 1fr}
+  .stack-card{max-width:640px;margin-inline:auto;padding:30px}
+  .offer .head{text-align:center}
+  .guarantee{grid-template-columns:auto 1fr;padding:34px}
+  .sticky{display:none}
+  footer{padding-bottom:30px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* productos para sumar (más productos) */
+.more{background:var(--paper)}
+.more .head{max-width:720px}
+.prod-grid{display:grid;gap:18px;margin-top:30px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.prod.star{border:2px solid var(--cta)}
+.cover{aspect-ratio:3/4;width:118px;border-radius:6px;padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 30px -16px rgba(20,18,60,.55);transform:rotate(-3deg);font:800 14px/1.1 var(--f-display);letter-spacing:-.01em}
+.cover small{font:700 9px/1.2 var(--f-body);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.cover.c1{background:var(--brand);color:var(--brand-ink)}
+.cover.c2{background:var(--coral);color:var(--coral-ink)}
+.cover.c3{background:#1d1b18;color:#f6efe3;border-left:6px solid #f39c12}
+.prod-top{display:flex;gap:18px;align-items:flex-start}
+.prod .badge{display:inline-block;background:var(--marker);color:var(--marker-ink);font:700 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:5px;margin-bottom:8px}
+.prod h3{font-size:21px}
+.prod .sub{color:var(--ink-soft);font-size:15px;margin-top:6px}
+.prod ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.prod li::marker{content:"✓  ";color:var(--mint)}
+.prod .buy{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding-top:6px;border-top:1px dashed var(--line)}
+.prod .buy .row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.prod .buy .price{font-size:32px}
+.prod .btn{padding:16px 22px;font-size:16px}
+.btn.ghost{background:transparent;color:var(--brand);box-shadow:inset 0 0 0 2px var(--brand)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--brand)}
+.combo{margin-top:22px;text-align:center;background:var(--paper-2);border-radius:var(--r);padding:18px;font-size:16px;color:var(--ink-soft)}
+.combo b{color:var(--ink)}
+@media (min-width:860px){.prod-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px;margin-inline:auto}}
+
+/* upsells: botones y resumen del carrito */
+.upsell-btn{background:var(--cta);color:var(--cta-ink);box-shadow:0 6px 0 rgba(0,0,0,.18);border:0;cursor:pointer;padding:16px 22px;font-size:16px}
+.upsell-btn .added{display:none}
+.upsell-btn.is-selected,.upsell-btn[data-upsell-selected="1"],.prod.star .upsell-btn.is-selected,.prod.star .upsell-btn[data-upsell-selected="1"]{background:var(--mint);color:#fff;box-shadow:none}
+.upsell-btn.is-selected .add,.upsell-btn[data-upsell-selected="1"] .add{display:none}
+.upsell-btn.is-selected .added,.upsell-btn[data-upsell-selected="1"] .added{display:inline}
+.prod:has(.upsell-btn.is-selected),.prod:has(.upsell-btn[data-upsell-selected="1"]){border:2px solid var(--mint)}
+.cart-sum{margin-top:24px;background:var(--card);border:2px solid var(--brand);border-radius:var(--r);padding:18px 20px;display:flex;flex-direction:column;gap:14px;align-items:stretch}
+.cart-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 28px;font-size:16px;line-height:1.3;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.cart-info b{font-size:18px}
+.cart-info b{color:var(--ink)}
+/* el total a pagar manda (grande, color de texto); el ahorro es un dato secundario en una etiqueta chica */
+.cart-info .pay-total{display:flex;flex-direction:column;gap:2px}
+.cart-info .pay-total small{font:600 13px/1.2 var(--f-body);color:var(--ink-soft)}
+.cart-info .cart-total{color:var(--ink);font:800 26px/1.1 var(--f-display)}
+.cart-info .save{background:rgba(18,163,138,.14);color:var(--mint);border-radius:999px;padding:5px 12px;font:600 14px/1.2 var(--f-body)}
+/* el "Ahorrás" automático de la tienda solo restaba el ebook y no coincidía con el valor total de abajo: queda oculto (no se borra para no romper el carrito) */
+.cart-info .save{display:none}
+.cart-info .save b{color:inherit;font-size:14px}
+.addons{display:flex;flex-direction:column;gap:4px;text-decoration:none;background:var(--paper-2);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:14px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.addons b{color:var(--ink)}
+@media (min-width:860px){.cart-sum{flex-direction:row;align-items:center;justify-content:space-between;max-width:880px;margin-inline:auto}}
+.cover-img{width:118px;aspect-ratio:3/4;object-fit:cover;border-radius:6px;box-shadow:0 18px 30px -16px rgba(20,18,60,.55);transform:rotate(-3deg);flex:none}
+.item .offer-p{display:block;text-align:right;color:var(--coral);font:800 18px/1.2 var(--f-display)}
+.peek.solo{grid-template-columns:1fr!important;max-width:760px}
+
+/* íconos */
+.ico{width:18px;height:18px;flex:none}
+.micro.icons span{display:inline-flex;align-items:center;gap:7px}
+.micro.icons span::before{content:none}
+.micro.icons .ico{color:var(--mint)}
+.pay2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.pm{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;border:1px solid var(--line);border-radius:12px;padding:12px 6px;background:var(--paper)}
+.pm .ico{width:24px;height:24px;color:var(--brand)}
+.pm b{font:700 12.5px/1.2 var(--f-body);color:var(--ink)}
+.pm.mp{background:#009ee3;border-color:#009ee3}
+.pm.mp .ico,.pm.mp b{color:#fff}
+.seal2{width:156px;justify-self:center;transform:rotate(-8deg);filter:drop-shadow(0 14px 18px rgba(18,163,138,.25))}
+.seal2 svg{width:100%;height:auto;display:block}
+.seal2 .burst{fill:var(--mint)}
+.seal2 .ring{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:4 4;opacity:.85}
+.seal2 .top{font:800 11px var(--f-body);letter-spacing:.16em;fill:#fff}
+.seal2 .num{font:800 54px var(--f-display);fill:#fff}
+.seal2 .lbl{font:800 13px var(--f-body);letter-spacing:.24em;fill:#fff}
+
+/* celu: la portada aparece arriba de todo, más chica, para que se entienda enseguida que es un ebook */
+@media (max-width:859px){
+  .hero{padding-top:28px}
+  .hero .wrap{gap:20px}
+  .mock{order:-1;padding:0 0 12px}
+  .mock .main{width:min(170px,46%)}
+  .mock .b{width:min(92px,26%);bottom:14px}
+  .mock .b1{left:12%}
+  .mock .b2{right:12%}
+  .mock .note{right:2%;font-size:22px}
+}
+.contact{margin-top:4px}
+/* vista previa del ebook: en el celu se desliza de costado */
+.pages-wrap{margin-top:36px}
+.pages{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 18px 14px;margin-inline:-18px;scrollbar-width:none}
+.pages::-webkit-scrollbar{display:none}
+.pages figure{flex:none;width:min(78%,320px);margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.pages img{width:100%;aspect-ratio:1000/1414;object-fit:cover;border-radius:8px;border:1px solid var(--line);box-shadow:0 20px 34px -20px rgba(20,18,60,.5)}
+.pages figcaption{font:600 14px/1.3 var(--f-body);color:var(--ink-soft)}
+@media (min-width:860px){.pages{overflow:visible;margin-inline:0;padding-inline:0}.pages figure{width:300px}}
+/* probalo acá mismo */
+.try{margin-top:26px;background:var(--card);border:2px solid var(--brand);border-radius:var(--r);padding:20px;display:grid;gap:12px}
+.try-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--paper-2);border-radius:999px;padding:5px}
+.try-tabs button{border:0;border-radius:999px;padding:12px 10px;font:700 15px/1.2 var(--f-body);background:transparent;color:var(--ink-soft);cursor:pointer}
+.try-tabs button[aria-selected="true"]{background:var(--cta);color:var(--cta-ink)}
+.try-tabs button:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.try-panel{display:grid;gap:10px}
+.try-panel[hidden]{display:none}
+.bubble.ai{background:var(--paper-2);color:var(--ink);border-left:4px solid var(--brand)}
+.bubble.ai small{color:var(--brand)}
+.try-verdict{font:700 15px/1.4 var(--f-body)}
+.try-verdict.bad{color:var(--danger)}
+.try-verdict.good{color:var(--mint)}
+/* qué pasa después de comprar */
+.after-buy{margin-top:18px;background:var(--paper-2);border-radius:12px;padding:16px}
+.after-title{font:700 16px/1.3 var(--f-display);margin-bottom:10px}
+.after-buy ol{margin:0;padding:0;list-style:none;counter-reset:ab;display:grid;gap:10px}
+.after-buy li{counter-increment:ab;display:grid;grid-template-columns:30px 1fr;column-gap:10px;font-size:15px;line-height:1.35}
+.after-buy li::before{content:counter(ab);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--mint);color:#fff;display:grid;place-items:center;font:800 14px/1 var(--f-display)}
+.after-buy li span{color:var(--ink-soft)}
+/* páginas ampliadas */
+.zoom{border:0;padding:0;background:transparent;max-width:min(94vw,720px);max-height:94vh}
+.zoom::backdrop{background:rgba(10,9,30,.85)}
+.zoom img{width:100%;height:auto;max-height:90vh;object-fit:contain;border-radius:8px}
+.zoom-x{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#1f1d4a;font:700 20px/1 var(--f-body);cursor:pointer}
+/* garantía visible junto al primer botón */
+.guar-mini{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:2px dashed var(--mint);border-radius:12px;padding:10px 14px;font-size:15px;line-height:1.35;color:var(--ink-soft)}
+.guar-mini .ico{width:28px;height:28px;color:var(--mint)}
+.guar-mini b{color:var(--ink)}
+/* dudas rápidas dentro de la oferta */
+.quick-faq{margin-top:18px;border-top:1px dashed var(--line);padding-top:6px}
+.quick-faq details{border-bottom:1px solid var(--line)}
+.quick-faq summary{cursor:pointer;list-style:none;padding:14px 30px 14px 0;font:700 16px/1.35 var(--f-display);position:relative}
+.quick-faq summary::-webkit-details-marker{display:none}
+.quick-faq summary::after{content:"+";position:absolute;right:4px;top:10px;font:500 24px/1 var(--f-body);color:var(--coral)}
+.quick-faq details[open] summary::after{content:"–"}
+.quick-faq p{padding:0 0 14px;color:var(--ink-soft);font-size:15px}
+
+/* reseñas cortas arriba (después de los datos del hero) */
+.mini-rv{display:grid;gap:12px}
+.mini-rv .rv{width:auto}
+@media (min-width:860px){.mini-rv{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* fondos por sección: cada bloque tiene su color, como capítulos distintos */
+:root{--bg-white:#ffffff;--bg-lilac:#f5f0fd;--bg-blue:#eef1f7;--bg-warm:#fff8e5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg-white:#211849;--bg-lilac:#2a1d5c;--bg-blue:#1b2142;--bg-warm:#2b2140}}
+:root[data-theme="dark"]{--bg-white:#211849;--bg-lilac:#2a1d5c;--bg-blue:#1b2142;--bg-warm:#2b2140}
+.sec-white{background:var(--bg-white)}
+.sec-lilac{background:var(--bg-lilac)}
+.sec-blue{background:var(--bg-blue)}
+.sec-warm{background:var(--bg-warm)}
+.sec-cream{background:var(--paper)}
+/* secciones oscuras: los colores se invierten solo dentro del bloque */
+.sec-dark{--paper:#1d1640;--paper-2:#271d57;--ink:#f8f5ef;--ink-soft:#c9c2e0;--line:#3a2f72;--brand:#c9a4f5;--brand-ink:#1d1640;--card:#2a1b5e;--coral:#ff8a5c;--grid:rgba(201,164,245,.07);--mint:#3fd0b2;color:var(--ink);background-color:#1d1640}
+.hero.sec-white{background-color:var(--bg-white)}
+.sec-dark .pm.mp{border-color:#009ee3}
+/* Identidad visual renovada: inspiración educativa, luminosa y comercial */
+:root{
+  --paper:#fffdf8; --paper-2:#f0f4ff; --ink:#26334d; --ink-soft:#59657b; --line:#e2e8f2;
+  --brand:#4658c9; --brand-ink:#ffffff; --coral:#f06b45; --coral-ink:#ffffff; --mint:#159b83;
+  --cta:#ffd34f; --cta-ink:#26334d; --marker:#ffd34f; --marker-ink:#26334d;
+  --grid:rgba(70,88,201,.07); --card:#ffffff; --danger:#d94c50;
+}
+:root{--bg-white:#ffffff;--bg-lilac:#f1f3ff;--bg-blue:#edf5fb;--bg-warm:#fff6e4}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#202943;--paper-2:#293653;--ink:#f8f9ff;--ink-soft:#c4cde0;--line:#3b4967;
+  --brand:#9ba8ff;--brand-ink:#202943;--coral:#ff9877;--coral-ink:#202943;--mint:#54d0b2;
+  --cta:#ffd34f;--cta-ink:#26334d;--marker:#ffd34f;--marker-ink:#26334d;--grid:rgba(155,168,255,.08);--card:#293653;
+  --bg-white:#25314b;--bg-lilac:#293653;--bg-blue:#22364b;--bg-warm:#3b3542;
+}}
+:root[data-theme="dark"]{
+  --paper:#202943;--paper-2:#293653;--ink:#f8f9ff;--ink-soft:#c4cde0;--line:#3b4967;
+  --brand:#9ba8ff;--brand-ink:#202943;--coral:#ff9877;--coral-ink:#202943;--mint:#54d0b2;
+  --cta:#ffd34f;--cta-ink:#26334d;--marker:#ffd34f;--marker-ink:#26334d;--grid:rgba(155,168,255,.08);--card:#293653;
+  --bg-white:#25314b;--bg-lilac:#293653;--bg-blue:#22364b;--bg-warm:#3b3542;
+}
+body{background:var(--paper)}
+.topbar{background:var(--brand);letter-spacing:.01em}
+.btn{border-radius:13px;box-shadow:0 5px 0 rgba(38,51,77,.18);font-weight:800}
+.btn:hover{box-shadow:0 7px 0 rgba(38,51,77,.18)}
+.pain,.vs-col,.rv,.toc details,.caps li,.facts div,.guarantee{box-shadow:0 8px 24px rgba(38,51,77,.055)}
+.pain,.vs-col,.rv,.toc details,.caps li{border-radius:16px}
+.hero{background-size:26px 26px}
+.offer{background:var(--brand)}
+.stack-card{border:1px solid rgba(38,51,77,.08);box-shadow:0 22px 55px -30px rgba(20,35,70,.35)}
+.sec-dark{--paper:#202943;--paper-2:#293653;--ink:#f8f9ff;--ink-soft:#c4cde0;--line:#3b4967;--brand:#9ba8ff;--brand-ink:#202943;--card:#293653;--coral:#ff9877;--grid:rgba(155,168,255,.08);--mint:#54d0b2;color:var(--ink);background-color:#202943}
+
+/* Bonus en tarjetas visuales inspiradas en la referencia */
+.offer{background:var(--paper);color:var(--ink)}
+.offer h2,.offer .eyebrow{color:var(--ink)}
+.offer .eyebrow{opacity:1;color:var(--brand)}
+.stack-card{max-width:1120px;margin-inline:auto;background:transparent;padding:0;box-shadow:none;border:0}
+.stack-card>.item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:26px}
+.bonus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 28px}
+.bonus-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:14px;background:#f4efff;border:1px solid #dfd0ff;border-radius:17px;color:#1d1640}
+.bonus-card.bonus-special{background:#fff8e7;border-color:#f6d57c}
+.bonus-image{width:100%;height:150px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.8);border-radius:13px;padding:9px;margin-bottom:14px}
+.bonus-image img{width:100%;height:100%;object-fit:contain;border-radius:7px;box-shadow:none}
+.bonus-tag{display:inline-block;background:#7738ef;color:#fff;font:800 11px/1 var(--f-body);letter-spacing:.05em;padding:6px 9px;border-radius:999px;margin-bottom:10px}
+.bonus-special .bonus-tag{background:#f5c451;color:#1d1640}
+.bonus-card h3{font-size:17px;line-height:1.16;margin-bottom:8px;color:#1d1640}
+.bonus-card p{font-size:14px;line-height:1.45;color:#5c5476}
+.bonus-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;margin-top:auto;padding-top:16px;font-size:13px}
+.bonus-foot s{color:#77708c}
+.bonus-foot b{color:#7136e8;font-size:12px;letter-spacing:.06em}
+.bonus-special .bonus-foot b{color:#8b6200}
+@media(min-width:860px){.bonus-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.bonus-image{height:190px}.bonus-card{padding:16px}.bonus-card h3{font-size:18px}.bonus-card p{font-size:15px}}
+@media(max-width:420px){.bonus-grid{grid-template-columns:1fr}.bonus-image{height:180px}}
+
+/* FONDO SIEMPRE CLARO: aunque la compu o el celu estén en modo oscuro, la página se ve clara */
+:root:root:root{
+  color-scheme:light;
+  --paper:#fffdf8; --paper-2:#f0f4ff; --ink:#26334d; --ink-soft:#59657b; --line:#e2e8f2;
+  --brand:#4658c9; --brand-ink:#ffffff; --coral:#f06b45; --coral-ink:#ffffff; --mint:#159b83;
+  --cta:#ffd34f; --cta-ink:#26334d; --marker:#ffd34f; --marker-ink:#26334d;
+  --grid:rgba(70,88,201,.07); --card:#ffffff; --danger:#d94c50;
+  --bg-white:#ffffff; --bg-lilac:#f1f3ff; --bg-blue:#edf5fb; --bg-warm:#fff6e4;
+}
+body{background:#ffffff}
+/* colores por bloque, todos claros: el inicio con el precio en color suave, lo siguiente en blanco */
+.hero.sec-white{background-color:#eef0ff}
+header.hero + section{background:#ffffff}
+/* portada dentro de una tablet */
+.mock::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(119,56,239,.18),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0}
+.mock{perspective:1400px}
+/* cuerpo de aluminio con borde pulido + vidrio negro + pantalla */
+.tablet{position:relative;z-index:2;width:min(300px,70%);padding:3px;border-radius:34px;
+  background:linear-gradient(135deg,#e9ebef 0%,#9aa0aa 18%,#5d636d 40%,#c7cbd2 62%,#6b717b 82%,#d9dce1 100%);
+  box-shadow:-18px 30px 40px -18px rgba(20,18,60,.45),-40px 60px 80px -30px rgba(20,18,60,.35),0 2px 3px rgba(0,0,0,.25);
+  transform:rotateY(-14deg) rotateX(4deg) rotateZ(5deg);transform-style:preserve-3d}
+.tablet::before{content:"";position:absolute;inset:3px;border-radius:31px;background:#0b0c10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+/* botones laterales */
+.tablet::after{content:"";position:absolute;right:-4px;top:16%;width:4px;height:44px;border-radius:0 3px 3px 0;background:linear-gradient(90deg,#7d838d,#c9ccd2);box-shadow:0 58px 0 #a5aab2}
+.tablet-cam{position:absolute;z-index:3;top:9px;left:50%;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#3a4a6a,#06070a 60%);box-shadow:0 0 0 1.5px #1a1c22}
+.tablet-screen{position:relative;z-index:2;margin:13px;border-radius:14px;overflow:hidden;background:#fff}
+.tablet-screen img{width:100%;height:auto;display:block}
+/* reflejo del vidrio */
+.tablet-screen::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.38) 0%,rgba(255,255,255,.08) 28%,transparent 42%,transparent 78%,rgba(255,255,255,.06) 100%);pointer-events:none}
+.mock .note{z-index:4}
+@media (max-width:859px){.tablet{width:min(210px,58%);border-radius:26px}.tablet::before{border-radius:23px}.tablet-screen{margin:9px;border-radius:10px}.tablet-cam{top:5px;width:5px;height:5px;margin-left:-2.5px}}
+/* tarjeta de compra con franja de precio especial */
+.buy-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 22px 26px;box-shadow:0 18px 40px -28px rgba(38,51,77,.35);margin-bottom:16px}
+.buy-main{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.mock .tablet,.tablet{}
+.tablet.tablet-mini{width:120px;transform:rotate(-5deg);border-radius:18px}
+.tablet.tablet-mini::before{border-radius:15px}
+.tablet.tablet-mini::after{height:18px;box-shadow:0 24px 0 #a5aab2}
+.tablet.tablet-mini .tablet-screen{margin:7px;border-radius:7px}
+.tablet.tablet-mini .tablet-cam{top:3px;width:4px;height:4px;margin-left:-2px}
+.buy-info{display:flex;flex-direction:column;gap:8px;min-width:0}
+.buy-info h3{font-size:22px}
+.buy-info p{color:var(--ink-soft);font-size:15px}
+.buy-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:6px}
+.buy-price{font:800 32px/1 var(--f-display);color:#3b1d8f;font-variant-numeric:tabular-nums}
+.buy-row .btn{padding:15px 22px;font-size:16px}
+.special{position:relative;display:flex;align-items:center;gap:14px;margin-top:30px;padding:18px 20px;border-radius:16px;text-decoration:none;color:#fff;background:linear-gradient(90deg,#2e1a6b,#4b1f9e);border:2px dashed #f5c451;box-shadow:0 18px 30px -18px rgba(46,26,107,.7)}
+.special-tag{position:absolute;top:-14px;left:16px;background:#f5c451;color:#1d1640;font:800 12px/1 var(--f-body);letter-spacing:.06em;padding:7px 12px;border-radius:999px}
+.special-ico{flex:none;width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+.special-ico .ico{width:22px;height:22px;color:#f5c451}
+.special-txt{flex:1;font-size:15px;line-height:1.35}
+.special-txt small{display:block;margin-top:4px;font-size:12.5px;opacity:.75}
+.special-txt small b{color:#fff}
+.special-price{font:800 30px/1 var(--f-display);color:#f5c451;white-space:nowrap}
+.special-price s{font:600 15px/1 var(--f-body);color:rgba(255,255,255,.65);margin-left:4px}
+@media (max-width:600px){.buy-main{grid-template-columns:1fr;justify-items:center;text-align:center}.buy-row{justify-content:center}.special{flex-wrap:wrap}.special-price{width:100%;text-align:right}}
+/* simuladores */
+.sim{margin-top:26px;background:var(--card);border:2px solid var(--brand);border-radius:var(--r);padding:20px;display:grid;gap:16px;max-width:760px}
+.sim-tabs{grid-template-columns:repeat(3,1fr)}
+.sim-panel{display:grid;gap:12px}
+.sim-panel[hidden]{display:none}
+.sim-meta{font:700 12px/1.3 var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
+.sim-opts{display:grid;gap:8px}
+.sim-opts button{text-align:left;border:1.5px solid var(--line);background:var(--paper-2);color:var(--ink);border-radius:12px;padding:14px 16px;font:600 16px/1.3 var(--f-body);cursor:pointer}
+.sim-opts button.ok{border-color:var(--mint);background:rgba(21,155,131,.12)}
+.sim-opts button.bad{border-color:var(--danger);background:rgba(217,76,80,.1)}
+.sim-fb{font:700 15px/1.4 var(--f-body)}
+.flash{position:relative;min-height:170px;border:0;border-radius:16px;cursor:pointer;background:var(--brand);color:#fff;padding:24px;font:700 20px/1.35 var(--f-display);display:grid;place-items:center;text-align:center}
+.flash .flash-back{display:none;font:500 18px/1.45 var(--f-body)}
+.flash[aria-pressed="true"]{background:var(--mint)}
+.flash[aria-pressed="true"] .flash-front{display:none}
+.flash[aria-pressed="true"] .flash-back{display:block}
+.sim-hint{font:600 13px/1.3 var(--f-body);color:var(--ink-soft);text-align:center}
+/* simuladores interactivos: fondo suave que destaca sin gritar */
+.sec-sim{background:linear-gradient(180deg,#eef0ff 0%,#fff3ea 100%)}
+.simx{margin-top:26px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px -30px rgba(34,32,76,.45);border:1px solid #e3e0f0}
+.simx-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:linear-gradient(140deg,#2f2c7a,#22204c)}
+.simx-tabs button{border:0;background:transparent;color:rgba(255,255,255,.75);padding:16px 8px;font:700 15px/1.2 var(--f-body);cursor:pointer;border-bottom:4px solid transparent}
+.simx-tabs small{display:block;font:700 10.5px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:#7ff0d6;margin-bottom:5px}
+.simx-tabs button[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.08);border-bottom-color:#ff6f59}
+.simx-panel{padding:18px}
+.simx-panel[hidden]{display:none}
+.simx-how{background:#fff7f2;border-left:4px solid #ff6f59;border-radius:10px;padding:12px 14px;font-size:15px;line-height:1.5;color:#2f2c5a;margin-bottom:14px}
+.simx-grid{display:grid;gap:16px}
+@media(min-width:820px){.simx-grid{grid-template-columns:1.35fr 1fr}}
+.simx canvas{width:100%;display:block;border-radius:12px;background:#fbfaff;border:1.5px solid #e3e0f0;touch-action:none}
+.simx label{display:block;font:600 12px var(--f-body);color:#6b6890;margin:12px 0 4px;letter-spacing:.04em}
+.simx label b{color:#22204c;font-size:14px}
+.simx input[type=range]{width:100%;accent-color:#ff6f59;height:28px}
+.simx select{font:600 14px var(--f-body);padding:8px 10px;border-radius:10px;border:1.5px solid #e3e0f0;color:#22204c;background:#fff;margin-left:6px}
+.simx-sel{display:flex;gap:14px;flex-wrap:wrap}
+.simx-sub{font:600 14px/1.4 var(--f-body);color:#22204c}
+.simx-res{background:#f6f4fb;border-radius:14px;padding:16px;font-size:15px;line-height:1.55;color:#2f2c5a;align-self:start}
+.simx-res p{margin:0 0 10px}
+.simx-big{font:800 22px/1.2 var(--f-display);color:#22204c}
+.simx-btn{border:0;cursor:pointer;font:700 14px var(--f-body);padding:11px 16px;border-radius:12px;background:#ff6f59;color:#fff}
+.simx-btn.ghost{background:#efedf9;color:#22204c}
+.simx-bar{height:14px;background:#efedf9;border-radius:99px;overflow:hidden;margin:6px 0 10px}.simx-bar i{display:block;height:100%;background:#f2c14e}
+.simx-foot{margin:0;padding:14px 18px;border-top:1px solid #e3e0f0;font:600 14px/1.4 var(--f-body);color:#6b6890;text-align:center}
+/* crear tus simuladores */
+.mk{margin-top:22px;background:#fff;border:2px dashed #ff6f59;border-radius:22px;padding:22px;display:grid;gap:16px}
+.mk-tag{display:inline-block;background:#ff6f59;color:#fff;font:800 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;margin-bottom:10px}
+.mk-head h3{font-size:22px;color:#22204c;margin-bottom:6px}
+.mk-head p{color:#59657b;font-size:16px}
+.mk-steps{list-style:none;margin:0;padding:0;counter-reset:mk;display:grid;gap:10px}
+.mk-steps li{counter-increment:mk;display:grid;grid-template-columns:36px 1fr;column-gap:12px;background:#f6f4fb;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.35}
+.mk-steps li::before{content:counter(mk);grid-row:span 2;width:34px;height:34px;border-radius:50%;background:#2f2c7a;color:#fff;display:grid;place-items:center;font:800 15px/1 var(--f-display)}
+.mk-steps span{color:#59657b}
+@media(min-width:820px){.mk-steps{grid-template-columns:repeat(3,1fr)}}
+/* por qué elegirnos */
+.why-grid{display:grid;gap:14px;margin-top:28px}
+@media(min-width:700px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why-card{background:#f6f4fb;border:1px solid #e3e0f0;border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.why-ico{width:46px;height:46px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 6px 14px -8px rgba(34,32,76,.3)}
+.why-card h3{font-size:18px;color:#22204c}
+.why-card p{color:#59657b;font-size:15px;line-height:1.5}
+.why-cta{margin-top:26px;text-align:center}
+</style>
+
+<!-- CAMBIO v2 (19/11): la barra superior repite lo que dice el anuncio ganador (finales de diciembre). -->
+<div class="topbar">Preparate para los <b>finales de diciembre</b> · Ebook + 5 bonus · Garantía de 7 días · Entrega inmediata</div>
+
+<header class="hero sec-white">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">EstudiaConIA · Para la facu, el ingreso o si estudiás y trabajás</p>
+      <h1>Aprendé cualquier cosa en menos tiempo, con la IA como <em>tu tutor personal</em>.</h1>
+      <p class="lead">Usá ChatGPT y Claude para entender, resumir y practicar como en el examen, no para copiar. Con <span class="mark">+200 pedidos listos para copiar y pegar</span>.</p>
+      <div class="buybox"><span class="price">$16.990</span>
+      <span class="cuotas">o pagalo en <b>cuotas sin interés</b></span>
+      <a class="btn cta" href="/checkout" data-checkout>Quiero mi ebook + 5 bonus gratis →</a>
+      <div class="guar-mini"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span><b>Garantía de 7 días.</b> Si no te sirve, te devolvemos el 100%.</span></div>
+      <div class="pay2">
+        <span class="pm mp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h14.5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2V7"/><path d="M4 7.5a2 2 0 0 1 0-4h11v4"/><circle cx="16.5" cy="13.5" r="1.2"/></svg><b>Mercado Pago</b></span>
+        <span class="pm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><path d="M6.5 15h4"/></svg><b>Crédito y débito</b><small class="pm-s">Cuotas sin interés</small></span>
+        <span class="pm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><circle cx="12" cy="15.5" r="1.3"/></svg><b>Pago 100% seguro</b></span>
+      </div>
+      <div class="micro icons"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Garantía de 7 días</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><circle cx="12" cy="15.5" r="1.3"/></svg>Pago seguro</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 19.5h14"/></svg>Descarga inmediata</span></div></div>
+    </div>
+    <div class="mock" aria-label="Portadas del ebook y los bonus">
+      <!-- TABLET: la portada se muestra dentro de una tablet hecha con CSS. Para cambiar la portada, cambiá el link de la imagen. -->
+      <div class="tablet"><span class="tablet-cam"></span><div class="tablet-screen"><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1794583540556_image-1794583530754.webp" alt="Portada del ebook IA para estudiar"></div></div>
+      <p class="note hand">+5 bonus<br>de regalo</p>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:34px">
+    <div class="facts">
+      <div><b>21</b>capítulos + anexo nuevo</div>
+      <div><b>+200</b>pedidos listos para usar</div>
+      <div><b>4</b>rutas según quién sos</div>
+      <div><b>Nov. 2026</b>funciones actualizadas</div>
+    </div>
+  </div>
+  <!-- RESEÑAS CORTAS ARRIBA: 3 reseñas visibles antes de la oferta. La cinta completa sigue más abajo. -->
+  <div class="wrap" style="margin-top:22px">
+    <p class="eyebrow" style="margin-bottom:12px">Lo que dicen quienes ya la usan</p>
+    <div class="mini-rv">
+      <article class="rv"><span class="stars">★★★★★</span><p>"Me re sirvió para Física. Cuando me trabo con un ejercicio, le pido que me lo explique paso a paso y después resuelvo uno parecido solo."</p><footer><span class="av">MG</span><span><b>Mauro G.</b><small>Física</small></span></footer></article>
+      <article class="rv"><span class="stars">★★★★★</span><p>"Leía los apuntes mil veces y no me quedaba nada. Ahora uso la IA para hacerme preguntas de cada tema antes de los parciales."</p><footer><span class="av">AE</span><span><b>Albaniz E.</b><small>Derecho</small></span></footer></article>
+      <article class="rv"><span class="stars">★★★★★</span><p>"Venía atrasado con Microeconomía. Con la guía dividí los temas y aproveché mucho mejor el rato que tenía para estudiar."</p><footer><span class="av">IG</span><span><b>Ignacio G.</b><small>Microeconomía</small></span></footer></article>
+    </div>
+  </div>
+</header>
+
+<section class="pains sec-lilac">
+  <div class="wrap">
+    <p class="eyebrow">¿Te suena?</p>
+    <h2>Estudiás un montón y aun así el examen te agarra mal parado.</h2>
+    <div class="pain-list">
+      <div class="pain"><span class="x">✕</span><div><h3>Tenés 30 páginas para el viernes</h3><p>Leés, subrayás, releés, y cuando cerrás el apunte no te queda claro qué era lo importante.</p></div></div>
+      <div class="pain"><span class="x">✕</span><div><h3>En clase lo entendiste, en el examen no te sale</h3><p>El profe lo explicó rápido, la bibliografía es densa y no tenés a quién preguntarle a las 11 de la noche.</p></div></div>
+      <div class="pain"><span class="x">✕</span><div><h3>Usás ChatGPT y te da cualquier cosa</h3><p>Respuestas genéricas, resúmenes que no se parecen a lo que te piden y datos que no sabés si son ciertos.</p></div></div>
+      <div class="pain"><span class="x">✕</span><div><h3>Sabés el tema, pero te bajan puntos</h3><p>No es lo que sabés: es cómo lo respondés. Te falta orden, te vas de la consigna o no justificás.</p></div></div>
+      <div class="pain"><span class="x">✕</span><div><h3>Trabajás, estudiás y no te da el tiempo</h3><p>Llegás a la semana del examen atrasado, sin plan y estudiando de noche lo que podías haber repartido.</p></div></div>
+      <div class="pain"><span class="x">✕</span><div><h3>Tenés miedo de que la IA sea trampa</h3><p>No querés copiar ni dejar de pensar por tu cuenta. Querés aprender de verdad, solo que más rápido.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-white">
+  <div class="wrap">
+    <p class="eyebrow">El cambio</p>
+    <h2>El problema no es la IA. Es <span class="mark">cómo le pedís</span>.</h2>
+    <p class="lead" style="margin-top:16px">La misma herramienta que te devuelve un resumen genérico puede tomarte examen, corregirte como tu profe y armarte un plan de estudio que entre en tu semana. La diferencia está en el método.</p>
+    <!-- Comparación fila por fila: en el celu cada fila es una tarjeta con las dos respuestas apiladas. -->
+    <div class="cmp" role="table" aria-label="Usar la IA sin método vs con el ebook">
+      <div class="cmp-head" role="row"><span role="columnheader">Cuando necesitás…</span><span role="columnheader" class="no">IA sin método</span><span role="columnheader" class="yes">Con el ebook</span></div>
+      <div class="cmp-row" role="row"><b role="rowheader">Resumir un apunte</b><span class="no" role="cell">"Resumime esto" y te da un texto que no estudiás.</span><span class="yes" role="cell">Resumen con conceptos clave, cuadro y preguntas tipo parcial.</span></div>
+      <div class="cmp-row" role="row"><b role="rowheader">Entender un tema</b><span class="no" role="cell">Una explicación genérica, igual para todos.</span><span class="yes" role="cell">Explicación a tu nivel, con ejemplos de tu carrera y preguntas para comprobar.</span></div>
+      <div class="cmp-row" role="row"><b role="rowheader">Prepararte para el parcial</b><span class="no" role="cell">Te das cuenta en el aula de lo que no sabías.</span><span class="yes" role="cell">Simulacros con el estilo de tu cátedra y corrección con nota.</span></div>
+      <div class="cmp-row" role="row"><b role="rowheader">Saber qué estudiar primero</b><span class="no" role="cell">Leés todo igual y no te alcanza el tiempo.</span><span class="yes" role="cell">Pegás parciales viejos y la IA te dice qué temas se repiten.</span></div>
+      <div class="cmp-row" role="row"><b role="rowheader">Usarla sin hacer trampa</b><span class="no" role="cell">Copiás respuestas que después no podés defender.</span><span class="yes" role="cell">La IA te explica y te corrige; el trabajo lo hacés vos.</span></div>
+    </div>
+    <div class="case">
+      <p class="eyebrow">Probalo con tus parciales viejos</p>
+      <h3>¿Qué tema toma siempre tu profe?</h3>
+      <p>Pegá 3 o 4 parciales anteriores y este pedido. En minutos sabés qué estudiar primero.</p>
+      <div class="bubble strong"><small>Pedido del ebook</small>"Te paso 4 parciales anteriores de [materia]. Hacé una tabla con los temas que aparecen, en cuántos parciales sale cada uno y qué tipo de pregunta usan. Ordenalos del más repetido al menos repetido. Después armame un simulacro con el mismo formato y dificultad, sin las respuestas".</div>
+    </div>
+    <!-- PROBALO ACÁ: el visitante cambia entre pedido flojo y pedido del ebook. Las respuestas son ejemplos ilustrativos. -->
+    <div class="try">
+      <p class="eyebrow">Probalo acá mismo</p>
+      <h3>Mismo tema, dos pedidos. Tocá y compará.</h3>
+      <div class="try-tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-try="weak">Pedido flojo</button>
+        <button type="button" role="tab" aria-selected="false" data-try="strong">Pedido del ebook</button>
+      </div>
+      <div class="try-panel" data-panel="weak">
+        <div class="bubble weak"><small>Vos le pedís</small>"Explicame la mitosis".</div>
+        <div class="bubble ai"><small>La IA te responde (ejemplo)</small>La mitosis es un proceso de división celular en el que una célula madre se divide en dos células hijas genéticamente idénticas. Consta de profase, prometafase, metafase, anafase y telofase, seguidas de la citocinesis…</div>
+        <p class="try-verdict bad">✕ Correcto, pero genérico. Lo leés y no sabés si lo entendiste.</p>
+      </div>
+      <div class="try-panel" data-panel="strong" hidden>
+        <div class="bubble strong"><small>Vos le pedís</small>"Soy estudiante de Enfermería y curso Biología. Explicame la mitosis en 5 pasos cortos, con un ejemplo de la vida cotidiana. Tengo examen el jueves. Al final haceme 3 preguntas para ver si lo entendí".</div>
+        <div class="bubble ai"><small>La IA te responde (ejemplo)</small>Pensalo como fotocopiar un apunte para un compañero: primero duplicás todo y después lo repartís en dos pilas iguales.<br>1. Se copia el ADN. 2. Se ordena en cromosomas. 3. Se alinean en el centro. 4. Se separan a cada lado. 5. La célula se parte en dos.<br><b>Ahora vos:</b> ¿en qué paso se separan las copias? ¿Por qué las dos células salen iguales? ¿Dónde lo ves en una herida que cicatriza?</div>
+        <p class="try-verdict good">✓ A tu nivel, con un ejemplo y preguntas para comprobar. Así se estudia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pains sec-cream">
+  <div class="wrap">
+    <p class="eyebrow">El método</p>
+    <h2>Un ciclo de 4 pasos que repetís con cualquier tema</h2>
+    <div class="cycle">
+      <div class="step"><div><h3>Entender</h3><p>La IA te explica a tu nivel, con ejemplos y analogías, hasta que te cierre.</p></div></div>
+      <div class="step"><div><h3>Organizar</h3><p>Convertís la explicación en resumen, cuadro o mapa conceptual que se estudia.</p></div></div>
+      <div class="step"><div><h3>Practicar</h3><p>Preguntas tipo examen, multiple choice y orales simulados con repreguntas.</p></div></div>
+      <div class="step"><div><h3>Corregir</h3><p>Pegás tus respuestas y recibís devolución con nota, como la de tu profe.</p></div></div>
+    </div>
+    <p class="hand" style="margin-top:22px">Los pasos 3 y 4 son los que te hacen aprobar.</p>
+  </div>
+</section>
+
+<!-- SIMULADORES: 3 de los simuladores interactivos del bonus, en versión corta. Funcionan solos, sin IA. -->
+<section class="sec-sim" id="simuladores">
+  <div class="wrap">
+    <p class="eyebrow">Bonus incluido · simuladores interactivos</p>
+    <h2>Mové, tocá y entendé: así se estudia con los simuladores</h2>
+    <p class="lead" style="margin-top:16px">Vienen con el ebook. Elegí uno, seguí los pasos y mirá cómo cambia todo en vivo.</p>
+    <div class="simx">
+      <div class="simx-tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-sx="od"><small>Economía</small>Oferta y demanda</button>
+        <button type="button" role="tab" aria-selected="false" data-sx="pu"><small>Biología</small>Cuadro de Punnett</button>
+        <button type="button" role="tab" aria-selected="false" data-sx="to"><small>Física</small>Tiro oblicuo</button>
+      </div>
+
+      <div class="simx-panel" data-sxp="od">
+        <div class="simx-how"><b>Cómo se usa:</b> mové las barras. A la derecha la demanda u oferta aumenta; a la izquierda, baja. El punto verde es el nuevo equilibrio.</div>
+        <div class="simx-grid">
+          <div><canvas id="sx-od"></canvas>
+            <label>DEMANDA: <b id="sx-dv"></b></label><input type="range" id="sx-d" min="-30" max="30" value="0">
+            <label>OFERTA: <b id="sx-ov"></b></label><input type="range" id="sx-o" min="-30" max="30" value="0"></div>
+          <div class="simx-res"><p class="simx-big" id="sx-eq"></p><p id="sx-ex"></p></div>
+        </div>
+      </div>
+
+      <div class="simx-panel" data-sxp="pu" hidden>
+        <div class="simx-how"><b>Cómo se usa:</b> elegí el genotipo de cada padre. Cada casilla es un hijo posible. Probá Aa × Aa para ver la clásica proporción 3:1.</div>
+        <div class="simx-grid">
+          <div><p class="simx-sub">Color de arvejas: A = amarilla (dominante) · a = verde</p>
+            <div class="simx-sel"><label>PADRE 1 <select id="sx-p1"><option>AA</option><option selected>Aa</option><option>aa</option></select></label>
+            <label>PADRE 2 <select id="sx-p2"><option>AA</option><option selected>Aa</option><option>aa</option></select></label></div>
+            <div id="sx-pg"></div></div>
+          <div class="simx-res" id="sx-pr"></div>
+        </div>
+      </div>
+
+      <div class="simx-panel" data-sxp="to" hidden>
+        <div class="simx-how"><b>Cómo se usa:</b> elegí velocidad y ángulo y tocá <b>Lanzar</b>. Probá 30° y después 60° con la misma velocidad: ¿dónde caen?</div>
+        <div class="simx-grid">
+          <div><canvas id="sx-to"></canvas>
+            <label>VELOCIDAD: <b id="sx-vv"></b></label><input type="range" id="sx-v" min="5" max="30" value="20">
+            <label>ÁNGULO: <b id="sx-av"></b></label><input type="range" id="sx-a" min="5" max="85" value="45">
+            <div style="display:flex;gap:8px;margin-top:10px"><button type="button" class="simx-btn" id="sx-go">Lanzar 🚀</button><button type="button" class="simx-btn ghost" id="sx-cl">Borrar marcas</button></div></div>
+          <div class="simx-res" id="sx-tr"></div>
+        </div>
+      </div>
+      <p class="simx-foot">Son 3 de los simuladores del bonus. Cada uno trae además preguntas tipo parcial para ponerte a prueba.</p>
+    </div>
+    <!-- CREÁ LOS TUYOS: aclara que el ebook enseña a armar simuladores propios -->
+    <div class="mk">
+      <div class="mk-head"><span class="mk-tag">Y lo mejor</span><h3>Te enseñamos a crear tus propios simuladores con IA</h3><p>Sin saber programar. Elegís el tema de tu materia, copiás el pedido y la IA te arma un simulador como estos, listo para usar en el celu o la compu.</p></div>
+      <ol class="mk-steps">
+        <li><b>Elegí el tema</b><span>El que te cuesta: mitosis, derivadas, oferta y demanda…</span></li>
+        <li><b>Copiá el pedido del ebook</b><span>Lo pegás en Claude o ChatGPT y cambiás el tema.</span></li>
+        <li><b>Usalo y compartilo</b><span>Te queda un simulador con preguntas tipo parcial incluidas.</span></li>
+      </ol>
+      <div class="bubble strong"><small>Pedido del ebook (ejemplo)</small>"Creá un simulador interactivo en una sola página HTML para entender [tema] de [materia]. Que tenga controles para cambiar los valores, un gráfico que se actualice en vivo, una explicación de qué pasa y 5 preguntas tipo parcial al final".</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-blue">
+  <div class="wrap">
+    <p class="eyebrow">Elegí tu ruta</p>
+    <h2>Estudies lo que estudies, hay una ruta para vos</h2>
+    <p class="lead" style="margin-top:16px">El capítulo nuevo te dice por dónde empezar, cómo organizar tu semana y qué pedirle a la IA según tu situación.</p>
+    <div class="pain-list">
+      <div class="pain"><span class="x" style="background:var(--mint)">1</span><div><h3>Estudio y trabajo</h3><p>Carreras online, profesorados o cursos con poco tiempo: una rutina de 45 minutos por día que sí se cumple.</p></div></div>
+      <div class="pain"><span class="x" style="background:var(--mint)">2</span><div><h3>Universidad y terciario</h3><p>Cualquier carrera: resúmenes que se estudian, orales simulados y trabajos corregidos sin que la IA los escriba por vos.</p></div></div>
+      <div class="pain"><span class="x" style="background:var(--mint)">3</span><div><h3>Ingreso y secundario</h3><p>CBC, UTN, enfermería o carreras con cupo: un plan por semanas con un simulacro cada sábado.</p></div></div>
+      <div class="pain"><span class="x" style="background:var(--mint)">4</span><div><h3>Padres que acompañan la tarea</h3><p>Entendé el tema para explicárselo a tu hijo, con preguntas que lo hagan pensar, sin hacerle la tarea.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-white">
+  <div class="wrap">
+    <p class="eyebrow">Qué hay adentro</p>
+    <h2>21 capítulos para cada momento de tu estudio</h2>
+    <!-- Pestañas sin JavaScript: cada radio muestra su panel. Para agregar una parte, sumá input + label + panel con el mismo número. -->
+    <div class="tabs">
+      <input type="radio" name="parte" id="pt1" checked>
+      <input type="radio" name="parte" id="pt2">
+      <input type="radio" name="parte" id="pt3">
+      <input type="radio" name="parte" id="pt4">
+      <input type="radio" name="parte" id="pt5">
+      <input type="radio" name="parte" id="pt6">
+      <div class="tab-bar" role="tablist" aria-label="Partes del ebook">
+        <label for="pt1"><b>Empezar bien</b><small>caps. 1–6</small></label>
+        <label for="pt2"><b>Entender y practicar</b><small>caps. 7–11</small></label>
+        <label for="pt3"><b>Casos y carreras</b><small>caps. 12–16</small></label>
+        <label for="pt4"><b>Nivel avanzado</b><small>caps. 17–20</small></label>
+        <label for="pt5"><b>Nuevo: tu ruta</b><small>cap. 21</small></label>
+        <label for="pt6"><b>Nuevo: anexo</b><small>conectores y habilidades</small></label>
+      </div>
+      <div class="tab-panels">
+        <ol class="caps p1"><li><i>1</i>La IA como tutor, no como trampa</li><li><i>2</i>Primeros pasos y el arte de pedir bien</li><li><i>3</i>ChatGPT o Claude: cuál conviene para cada cosa</li><li><i>4</i>Resumir apuntes, PDFs y clases</li><li><i>5</i>Proyectos, conectores, habilidades y NotebookLM</li><li><i>6</i>Claude que trabaja por vos: tareas largas y repasos automáticos</li></ol>
+        <ol class="caps p2"><li><i>7</i>Entender temas difíciles a tu medida</li><li><i>8</i>Practicar como si fuera el parcial</li><li><i>9</i>Organizar el cuatrimestre</li><li><i>10</i>Finales y orales simulados</li><li><i>11</i>Estrategia según el tipo de examen</li></ol>
+        <ol class="caps p3"><li><i>12</i>Ejemplos por materia del CBC</li><li><i>13</i>Un caso completo, del PDF al parcial</li><li><i>14</i>Para estudiantes de diseño</li><li><i>15</i>Canva + IA para estudiar y presentar</li><li><i>16</i>Idiomas y lectocomprensión</li></ol>
+        <ol class="caps p4"><li><i>17</i>Tus libros y apuntes en Google Drive</li><li><i>18</i>Que la IA te corrija los trabajos</li><li><i>19</i>Que tus textos suenen a vos</li><li><i>20</i>Errores comunes y límites</li></ol>
+        <ol class="caps p5"><li class="wide"><i>21</i>Tu ruta según quién sos: estudio y trabajo, universidad y terciario, ingreso y secundario, y padres que acompañan la tarea. Con 12 pedidos nuevos.</li></ol>
+        <ol class="caps p6"><li><i>A</i>Conectores que sirven para estudiar: Google Drive, Calendar, Canva y más, con pedidos de ejemplo</li><li><i>A</i>El combo "del PDF al parcial" en 4 pasos</li><li><i>A</i>8 habilidades de Claude listas para crear: resumidor, tutor, flashcards, simulador de parcial y más</li><li><i>A</i>Cómo crear una habilidad en 4 pasos, sin saber programar</li></ol>
+      </div>
+      <p class="tab-hint">Tocá cada parte para ver sus capítulos →</p>
+    </div>
+    <!-- VISTA PREVIA: páginas reales del ebook. Para sumar otra, copiá un <figure> y cambiá el link y el texto. -->
+    <div class="pages-wrap">
+      <p class="eyebrow" style="margin-bottom:12px">Mirá cómo es por dentro · tocá una página para verla grande</p>
+      <div class="pages">
+        <figure><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1794575338629_image-1794574960455.webp" alt="Página del ebook: apertura del capítulo 1, La IA como tutor, no como trampa" loading="lazy"><figcaption>Capítulo 1: la IA como tutor</figcaption></figure>
+        <figure><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1794575378047_image-1794574955261.webp" alt="Página del ebook: la fórmula del buen pedido, con ejemplos" loading="lazy"><figcaption>La fórmula del buen pedido</figcaption></figure>
+        <figure><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1794575650575_image-1794574950137.webp" alt="Página del ebook: ChatGPT o Claude, cuál conviene según la tarea" loading="lazy"><figcaption>ChatGPT o Claude: cuál conviene</figcaption></figure>
+        <figure><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1794575590399_image-1794574937198.webp" alt="Página del ebook: habilidades de Claude, generador de flashcards y simulador de parcial" loading="lazy"><figcaption>Nuevo: habilidades de Claude (flashcards y más)</figcaption></figure>
+      </div>
+    </div>
+    <div class="peek solo">
+      <div class="stack">
+        <h3>Práctico de verdad, no teoría sobre IA</h3>
+        <p class="lead">Cada capítulo trae pedidos listos para copiar, tablas para decidir rápido y ejemplos con materias reales. Sirve para cualquier carrera, terciario o curso, y además trae ejemplos para las materias del CBC y de primer año.</p>
+        <p class="lead">No necesitás saber nada de tecnología. Si sabés mandar un WhatsApp, sabés usar este ebook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMBIO v2 (19/11): POR QUÉ NOSOTROS se movió acá, justo ANTES de la oferta, y se reescribió para responder "¿por qué te compraría a vos?". -->
+<section class="sec-white why" id="por-que">
+  <div class="wrap">
+    <p class="eyebrow">¿Por qué comprarnos a nosotros?</p>
+    <h2>Hay mucha info gratis sobre IA. Lo que no hay es un método para aprobar.</h2>
+    <p class="lead" style="margin-top:16px">En YouTube y TikTok encontrás trucos sueltos y tenés que probar horas hasta que algo funcione. Acá tenés todo ordenado, con los pedidos ya armados y pensado para estudiantes de Argentina, para que llegues a tus finales preparado y no solo con un resumen.</p>
+    <div class="why-grid">
+      <div class="why-card"><span class="why-ico">⏱️</span><h3>Pensado para quien no tiene tiempo</h3><p>Si estudiás y trabajás, no podés pasarte la noche probando qué pedirle a la IA. Te damos una rutina de 45 minutos por día que sí entra en tu semana.</p></div>
+      <div class="why-card"><span class="why-ico">📝</span><h3>Te prepara para el examen, no solo para resumir</h3><p>Simulacros con el estilo de tu cátedra, orales con repreguntas y corrección con nota. Los errores los descubrís antes, no en el aula.</p></div>
+      <div class="why-card"><span class="why-ico">🇦🇷</span><h3>Hecho para cómo se estudia acá</h3><p>CBC, ingresos, terciarios, profesorados, parciales, finales y orales. Rutas para cada situación y tutores de IA para 20 materias, sea cual sea tu carrera.</p></div>
+      <div class="why-card"><span class="why-ico">🎯</span><h3>Para aprender, no para copiar</h3><p>La IA te explica, te toma examen y te corrige. El trabajo lo hacés vos, y por eso después lo podés defender en un oral.</p></div>
+      <div class="why-card"><span class="why-ico">📋</span><h3>Listo para usar hoy, sin saber de tecnología</h3><p>+200 pedidos para copiar y pegar, simuladores interactivos y 5 bonus. Funciona con las versiones gratis de ChatGPT y Claude. Si sabés usar WhatsApp, sabés usar esto.</p></div>
+      <div class="why-card"><span class="why-ico">🛡️</span><h3>Sin riesgo</h3><p>Un solo pago, sin suscripción y en cuotas sin interés. Lo recibís al instante en tu mail y es tuyo para siempre. Si en 7 días no te sirve, te devolvemos el 100%.</p></div>
+    </div>
+    <div class="why-cta">
+      <p class="hand" style="margin-bottom:14px">Los finales de diciembre ya están acá. Cada semana cuenta.</p>
+      <a class="btn cta" href="#oferta">Ver todo lo que recibís →</a>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Todo lo que recibís hoy</p><h2>Ebook + 5 bonus por un solo pago</h2></div>
+    <div class="stack-card">
+      <!-- CAMBIAR: reemplazá este link por el de "portada-IA-para-estudiar.png" (edición noviembre) -->
+      <div class="item"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/inline/361ec5865494d2d23a320de57efbba986d47cea6694876e3c1a66656441a975c.jpg" alt="Portada del ebook IA para Estudiar"><div><h3>IA para Estudiar</h3><p>Ebook de 21 capítulos, edición noviembre 2026. Nuevo: anexo de conectores y 8 habilidades de Claude.</p></div><span class="v"><s>$29.990</s><b class="offer-p">$16.990</b></span></div>
+      <div class="bonus-grid">
+        <article class="bonus-card">
+          <div class="bonus-image"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/inline/f88c49601e316be4d806c4054a3062de1f3815b6a46a32f1a97e490849ff3599.jpg" alt="Bonus 1: Biblioteca de 125 pedidos" loading="lazy"></div>
+          <span class="bonus-tag">BONUS 01</span>
+          <h3>Biblioteca de 125 pedidos</h3>
+          <p>Resúmenes, explicaciones, práctica, orales y organización. Con checklist para detectar cuando la IA inventa.</p>
+          <div class="bonus-foot"><s>$9.990</s><b>GRATIS</b></div>
+        </article>
+        <article class="bonus-card">
+          <div class="bonus-image"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/inline/a2554b502244064828bc1e8f91f9782ecf05a512a7169f7e5e187747ef737b86.jpg" alt="Bonus 2: Mapas conceptuales y presentaciones" loading="lazy"></div>
+          <span class="bonus-tag">BONUS 02</span>
+          <h3>Mapas conceptuales y presentaciones</h3>
+          <p>De tus apuntes a material visual, más un plan de repaso de 7 días.</p>
+          <div class="bonus-foot"><s>$7.990</s><b>GRATIS</b></div>
+        </article>
+        <article class="bonus-card">
+          <div class="bonus-image"><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1793670905889_image-1793659665085.webp" alt="Bonus 3: Tutores IA por materia" loading="lazy"></div>
+          <span class="bonus-tag">BONUS 03</span>
+          <h3>Tutores IA por materia</h3>
+          <p>Un tutor de IA listo para 20 materias, más una plantilla para armar el tuyo.</p>
+          <div class="bonus-foot"><s>$7.800</s><b>GRATIS</b></div>
+        </article>
+        <article class="bonus-card bonus-special">
+          <div class="bonus-image"><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1793670921029_portada-ejercicios.webp" alt="Bonus 4: Ejercicios con una foto" loading="lazy"></div>
+          <span class="bonus-tag">BONUS 04 · NUEVO</span>
+          <h3>Ejercicios con una foto</h3>
+          <p>Matemática, Física y Química paso a paso, con pistas en vez de la respuesta.</p>
+          <div class="bonus-foot"><s>$9.990</s><b>GRATIS</b></div>
+        </article>
+        <article class="bonus-card bonus-special">
+          <div class="bonus-image"><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1793670935422_portada-flashcards.webp" alt="Bonus 5: Flashcards con IA" loading="lazy"></div>
+          <span class="bonus-tag">BONUS 05 · NUEVO</span>
+          <h3>Flashcards con IA</h3>
+          <p>De tus apuntes a un mazo de repaso en 5 minutos, con 5 mazos listos para Anki y Quizlet.</p>
+          <div class="bonus-foot"><s>$12.800</s><b>GRATIS</b></div>
+        </article>
+      </div>
+      <!-- TARJETA DE COMPRA: tablet chica + precio + botón; abajo, la franja de precio especial lleva a los ebooks extra -->
+      <div class="buy-card">
+        <div class="buy-main">
+          <div class="tablet tablet-mini"><span class="tablet-cam"></span><div class="tablet-screen"><img src="https://sb.impultienda.ar/storage/v1/object/public/store-resources/eca442b1-ad2d-40bf-bd73-2f8b74133559/1794583540556_image-1794583530754.webp" alt="Portada del ebook IA para Estudiar" loading="lazy"></div></div>
+          <div class="buy-info">
+            <h3>IA para Estudiar + 5 bonus</h3>
+            <p>Resúmenes, práctica tipo parcial y orales simulados, con +200 pedidos listos para copiar en la IA.</p>
+            <div class="buy-row"><span class="buy-price">$16.990</span><a class="btn cta" href="/checkout" data-checkout>Quiero mi ebook →</a></div>
+            <span class="cuotas">o pagalo en <b>cuotas sin interés</b></span>
+          </div>
+        </div>
+        <a class="special" href="#mas-productos">
+          <span class="special-tag">PRECIO ESPECIAL</span>
+          <span class="special-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8.5" width="17" height="12" rx="1.5"/><path d="M2.5 8.5h19v4h-19zM12 8.5v12M12 8.5S10.5 4 8 4.5 7 8.5 12 8.5zM12 8.5S13.5 4 16 4.5 17 8.5 12 8.5z"/></svg></span>
+          <span class="special-txt">Si sumás la <b>Guía de examen</b>, te queda en<small>Agregadas: <b data-upsell-count></b> · Total: <b data-cart-total></b></small></span>
+          <span class="special-price">$6.990 <s>$14.990</s></span>
+        </a>
+      </div>
+      <div class="pay2">
+        <span class="pm mp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h14.5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2V7"/><path d="M4 7.5a2 2 0 0 1 0-4h11v4"/><circle cx="16.5" cy="13.5" r="1.2"/></svg><b>Mercado Pago</b></span>
+        <span class="pm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><path d="M6.5 15h4"/></svg><b>Crédito y débito</b><small class="pm-s">Cuotas sin interés</small></span>
+        <span class="pm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><circle cx="12" cy="15.5" r="1.3"/></svg><b>Pago 100% seguro</b></span>
+      </div>
+      <p class="micro icons" style="margin-top:14px"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4.5 7l7.5 6 7.5-6"/></svg>Lo recibís en tu mail al instante</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="10" rx="1.8"/><path d="M1.8 18h15.4"/><rect x="17" y="8" width="5" height="11" rx="1.4"/></svg>Para leer en el celu, la tablet o la compu</span></p>
+      <div class="after-buy">
+        <p class="after-title">Qué pasa después de comprar</p>
+        <ol>
+          <li><b>Pagás con Mercado Pago</b><span>Tarjeta de crédito, débito o dinero en cuenta.</span></li>
+          <li><b>Te llega al mail al instante</b><span>El ebook y los 5 bonus, apenas se aprueba el pago.</span></li>
+          <li><b>Es tuyo para siempre</b><span>Descargás los PDF y los usás en el celu, la tablet o la compu todas las veces que quieras.</span></li>
+        </ol>
+      </div>
+      <div class="quick-faq">
+      <details><summary>¿Tengo que pagar ChatGPT o Claude?</summary><p>No. La mayoría de lo que enseña el ebook funciona con las versiones gratuitas. Algunas funciones avanzadas, como tareas programadas o ciertos conectores, pueden requerir un plan pago, y el ebook te avisa en cada caso.</p></details>
+      <details><summary>¿Cómo lo recibo?</summary><p>Apenas se acredita el pago te llega un mail con el ebook y los 5 bonus en PDF, más los mazos de flashcards listos para importar. Los podés leer en el celular, la tablet o la compu.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec-cream">
+  <div class="wrap">
+    <p class="eyebrow">Para quién es</p>
+    <h2>Este ebook es para vos si…</h2>
+    <div class="fit">
+      <div class="vs-col good"><h3>Te va a servir si</h3><ul><li>Cursás una carrera universitaria, un terciario, un profesorado o una tecnicatura.</li><li>Te preparás para un ingreso (CBC, UTN, enfermería) o estás terminando el secundario.</li><li>Trabajás y estudiás, y necesitás un método que entre en tu semana.</li><li>Querés acompañar la tarea de tus hijos sin hacérsela.</li><li>Ya usás ChatGPT o Claude, pero sentís que no le sacás el jugo.</li></ul></div>
+      <div class="vs-col bad"><h3>No es para vos si</h3><ul><li>Buscás que la IA haga los trabajos por vos.</li><li>Querés copiar respuestas en un examen.</li><li>Esperás aprobar sin leer ni practicar.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESEÑAS. La segunda tanda duplica las tarjetas para que la cinta avance sin cortes. -->
+<section class="pains sec-lilac">
+  <div class="wrap">
+    <p class="eyebrow">Lo que dicen</p>
+    <h2>Estudiantes que ya la usan</h2>
+    <div class="reviews" tabindex="0" aria-label="Reseñas de compradores. Tocá para frenar.">
+      <div class="rv-track">
+        <article class="rv"><p>"Dejé de perder tiempo tratando de ordenar todos los PDFs. Ahora puedo separar los temas importantes y armarme resúmenes mucho más claros para estudiar."</p><span class="grade">Contabilidad</span><footer><span class="av">LV</span><span><b>Luis V.</b></span></footer></article>
+        <article class="rv"><p>"Antes usaba ChatGPT para estudiar, pero medio que no sabía cómo sacarle provecho. Con el ebook descubrí varias formas de usarlo para entender mejor los temas y preparar los parciales. La verdad, me resultó mucho más útil de lo que esperaba."</p><span class="grade">Reseña en Facebook</span><footer><span class="av">CP</span><span><b>Carla Pangrazi</b></span></footer></article>
+        <article class="rv"><p>"La verdad, me re sirvió para Física. Cuando me trabo con un ejercicio, puedo pedir que me lo explique paso a paso y después intentar resolver uno parecido por mi cuenta."</p><span class="grade">Física</span><footer><span class="av">MG</span><span><b>Mauro G.</b></span></footer></article>
+        <article class="rv"><p>"Los cuestionarios me ayudan a darme cuenta qué temas todavía no tengo claros. Está bueno practicar antes del parcial y no enterarme en el examen."</p><span class="grade">Bioquímica</span><footer><span class="av">DT</span><span><b>Diego T.</b></span></footer></article>
+        <article class="rv"><p>"Venía bastante atrasado con Microeconomía y necesitaba organizarme. Con la guía pude dividir los temas y aprovechar mejor el rato que tenía para estudiar."</p><span class="grade">Microeconomía</span><footer><span class="av">IG</span><span><b>Ignacio G.</b></span></footer></article>
+        <article class="rv"><p>"¡Me encantó este ebook! Me parece una guía súper completa y útil para todas aquellas personas que queremos aprender a sacarle el máximo provecho a la IA. No se trata solamente de aprender a escribir mejores prompts, sino también de descubrir todo lo que podemos hacer con herramientas como ChatGPT o Claude en mi caso, conectar aplicaciones. Me parece especialmente interesante para estudiantes."</p><span class="grade">Reseña en Facebook</span><footer><span class="av">VP</span><span><b>Viviana Carolina Pavone</b></span></footer></article>
+        <article class="rv"><p>"Me pasaba que leía los apuntes mil veces y sentía que no me quedaba nada. Ahora uso la IA para hacer preguntas sobre cada tema y practicar antes de los parciales."</p><span class="grade">Derecho</span><footer><span class="av">AE</span><span><b>Albaniz E.</b></span></footer></article>
+        <article class="rv"><p>"Pensé que ya sabía usar ChatGPT, pero con la guía descubrí un montón de formas de aprovecharlo para estudiar. Sobre todo para organizar textos largos y preparar exposiciones."</p><span class="grade">Profesorado</span><footer><span class="av">MM</span><span><b>Matías M.</b></span></footer></article>
+        <article class="rv"><p>"Hay materias que se me hacen bastante pesadas y termino trabándome con algunos conceptos. Ahora puedo pedir explicaciones paso a paso y ejemplos más sencillos."</p><span class="grade">Contabilidad</span><footer><span class="av">RG</span><span><b>Renata G.</b></span></footer></article>
+
+        <article class="rv" aria-hidden="true"><p>"Dejé de perder tiempo tratando de ordenar todos los PDFs. Ahora puedo separar los temas importantes y armarme resúmenes mucho más claros para estudiar."</p><span class="grade">Contabilidad</span><footer><span class="av">LV</span><span><b>Luis V.</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"Antes usaba ChatGPT para estudiar, pero medio que no sabía cómo sacarle provecho. Con el ebook descubrí varias formas de usarlo para entender mejor los temas y preparar los parciales. La verdad, me resultó mucho más útil de lo que esperaba."</p><span class="grade">Reseña en Facebook</span><footer><span class="av">CP</span><span><b>Carla Pangrazi</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"La verdad, me re sirvió para Física. Cuando me trabo con un ejercicio, puedo pedir que me lo explique paso a paso y después intentar resolver uno parecido por mi cuenta."</p><span class="grade">Física</span><footer><span class="av">MG</span><span><b>Mauro G.</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"Los cuestionarios me ayudan a darme cuenta qué temas todavía no tengo claros. Está bueno practicar antes del parcial y no enterarme en el examen."</p><span class="grade">Bioquímica</span><footer><span class="av">DT</span><span><b>Diego T.</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"Venía bastante atrasado con Microeconomía y necesitaba organizarme. Con la guía pude dividir los temas y aprovechar mejor el rato que tenía para estudiar."</p><span class="grade">Microeconomía</span><footer><span class="av">IG</span><span><b>Ignacio G.</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"¡Me encantó este ebook! Me parece una guía súper completa y útil para todas aquellas personas que queremos aprender a sacarle el máximo provecho a la IA. No se trata solamente de aprender a escribir mejores prompts, sino también de descubrir todo lo que podemos hacer con herramientas como ChatGPT o Claude en mi caso, conectar aplicaciones. Me parece especialmente interesante para estudiantes."</p><span class="grade">Reseña en Facebook</span><footer><span class="av">VP</span><span><b>Viviana Carolina Pavone</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"Me pasaba que leía los apuntes mil veces y sentía que no me quedaba nada. Ahora uso la IA para hacer preguntas sobre cada tema y practicar antes de los parciales."</p><span class="grade">Derecho</span><footer><span class="av">AE</span><span><b>Albaniz E.</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"Pensé que ya sabía usar ChatGPT, pero con la guía descubrí un montón de formas de aprovecharlo para estudiar. Sobre todo para organizar textos largos y preparar exposiciones."</p><span class="grade">Profesorado</span><footer><span class="av">MM</span><span><b>Matías M.</b></span></footer></article>
+        <article class="rv" aria-hidden="true"><p>"Hay materias que se me hacen bastante pesadas y termino trabándome con algunos conceptos. Ahora puedo pedir explicaciones paso a paso y ejemplos más sencillos."</p><span class="grade">Contabilidad</span><footer><span class="av">RG</span><span><b>Renata G.</b></span></footer></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CAMBIO v2 (19/11): la sección POR QUÉ NOSOTROS que estaba acá se movió más arriba, antes de la oferta (#por-que). -->
+
+<section class="sec-warm">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal2" aria-label="7 días de garantía">
+        <svg viewBox="0 0 160 160" aria-hidden="true">
+          <polygon class="burst" points="156.0,80.0 147.4,88.9 153.4,99.7 142.8,106.0 145.8,118.0 133.9,121.4 133.7,133.7 121.4,133.9 118.0,145.8 106.0,142.8 99.7,153.4 88.9,147.4 80.0,156.0 71.1,147.4 60.3,153.4 54.0,142.8 42.0,145.8 38.6,133.9 26.3,133.7 26.1,121.4 14.2,118.0 17.2,106.0 6.6,99.7 12.6,88.9 4.0,80.0 12.6,71.1 6.6,60.3 17.2,54.0 14.2,42.0 26.1,38.6 26.3,26.3 38.6,26.1 42.0,14.2 54.0,17.2 60.3,6.6 71.1,12.6 80.0,4.0 88.9,12.6 99.7,6.6 106.0,17.2 118.0,14.2 121.4,26.1 133.7,26.3 133.9,38.6 145.8,42.0 142.8,54.0 153.4,60.3 147.4,71.1"/>
+          <circle cx="80" cy="80" r="58" class="ring"/>
+          <text x="80" y="58" class="top" text-anchor="middle">GARANTÍA</text>
+          <text x="80" y="104" class="num" text-anchor="middle">7</text>
+          <text x="80" y="124" class="lbl" text-anchor="middle">DÍAS</text>
+        </svg>
+      </div>
+      <div class="stack">
+        <h2 style="font-size:clamp(26px,5vw,36px)">Probalo sin riesgo</h2>
+        <p class="lead">Si en los primeros 7 días sentís que el ebook no te sirve, escribinos y te devolvemos el 100% de lo que pagaste. Sin preguntas incómodas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pains sec-white">
+  <div class="wrap">
+    <p class="eyebrow">Preguntas frecuentes</p>
+    <h2>Lo que nos suelen preguntar</h2>
+    <div class="faq">
+      <details><summary>¿Sirve para lo que yo estudio?</summary><p>Sí. El método sirve para cualquier carrera, terciario, profesorado, curso o ingreso. Además, el capítulo 21 te da una ruta según tu situación (estudio y trabajo, universidad y terciario, ingreso y secundario, o padres), y trae ejemplos para las materias del CBC y capítulos especiales para diseño e idiomas. El bonus de Ejercicios con una foto te ayuda con Matemática, Física y Química.</p></details>
+      <details><summary>Soy mamá o papá. ¿Me sirve para ayudar con la tarea?</summary><p>Sí. La ruta para padres te enseña a usar la IA para entender el tema y explicárselo a tu hijo, con preguntas que lo hagan pensar, sin hacerle la tarea. Con los más chicos, usala vos, a su lado, y revisá la edad mínima de cada plataforma.</p></details>
+      <details><summary>¿No es trampa usar IA para estudiar?</summary><p>El ebook enseña a usar la IA para aprender, no para copiar: que te explique, te tome examen y te corrija, mientras el trabajo lo hacés vos. Antes de usarla en una entrega, consultá las reglas de tu cátedra o de tu escuela.</p></details>
+      <details><summary>No sé nada de tecnología. ¿Lo voy a poder usar?</summary><p>Sí. Está escrita en lenguaje simple y cada pedido está listo para copiar y pegar. Si sabés usar WhatsApp, podés usar este ebook.</p></details>
+      <details><summary>¿Puedo pagar en cuotas?</summary><p>Sí. Podés pagar con Mercado Pago, tarjeta de débito o de crédito, en cuotas sin interés. Las cuotas disponibles se ven en el paso de pago según tu tarjeta.</p></details>
+      <details><summary>¿Está actualizada?</summary><p>Sí. Es la edición de noviembre de 2026, con las funciones de ChatGPT, Claude, NotebookLM y Canva revisadas. Las apps cambian seguido, por eso el ebook también te enseña a encontrar cada función aunque cambie de lugar.</p></details>
+      <details><summary>¿Y si no me sirve?</summary><p>Tenés 7 días de garantía. Si no te sirve, te devolvemos el 100% de tu compra.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÁS PRODUCTOS (se compran aparte) ============
+     Upsells (posición en la lista de la tienda): 1 = Guía de examen · 2 = Aprendé a programar.
+     El Plan de estudio es solo post-compra: no está en esta lista ni en la landing.
+     Las portadas salen de {{upsell_N_image}}, así se actualizan solas si cambiás la imagen en la tienda.
+     Los botones data-upsell-toggle los suman/quitan del carrito; el checkout los lleva solos.
+     Precios: 1 = $6.990 (antes $14.990) · 2 = $10.500 (antes $35.000). -->
+<section class="more sec-lilac" id="mas-productos">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Completá tu kit</p>
+      <h2>¿Querés ir un paso más allá? Sumá estos ebooks</h2>
+      <p class="lead" style="margin-top:16px">Se compran por separado y complementan el ebook principal: una te enseña a responder como te evalúan, en escritos y orales, y otra te acompaña si cursás programación.</p>
+    </div>
+    <div class="prod-grid">
+
+      <article class="prod">
+        <div class="prod-top">
+          <img class="cover-img" src="{{upsell_1_image}}" alt="Portada de la Guía de examen: escritos y orales" loading="lazy">
+          <div><span class="badge">Para aprobar</span><h3>Guía de examen: escritos y orales</h3><p class="sub">Sabés el tema, pero te bajan puntos. Esto lo resuelve.</p></div>
+        </div>
+        <ul>
+          <li>Cómo leer cada consigna: qué te piden cuando dice "explicá", "compará", "justificá" o "analizá".</li>
+          <li>Estructuras de respuesta para parciales escritos, orales y multiple choice.</li>
+          <li><b>Nuevo:</b> simulador de examen oral con IA, con 4 modalidades de mesa, repreguntas y nota del 1 al 10.</li>
+          <li>Los errores que más puntos te bajan y cómo evitarlos.</li>
+        </ul>
+        <div class="buy">
+          <div class="row"><span class="was">Antes $14.990</span><span class="price">$6.990</span></div>
+          <button type="button" class="btn block upsell-btn" data-upsell-toggle="1"><span class="add">+ Agregar a mi compra</span><span class="added">✓ Agregado · tocá para quitar</span></button>
+        </div>
+      </article>
+
+      <article class="prod">
+        <div class="prod-top">
+          <img class="cover-img" src="{{upsell_2_image}}" alt="Portada del ebook Aprendé a programar con IA" loading="lazy">
+          <div><span class="badge">Programación</span><h3>Aprendé a programar más rápido usando la IA como tu tutor personal</h3><p class="sub">Para quienes cursan materias de programación o arrancan solos.</p></div>
+        </div>
+        <ul>
+          <li>96 páginas y 10 capítulos, con más de 30 ilustraciones y chats de ejemplo.</li>
+          <li>Instalación paso a paso de Python y VS Code, en Windows y en Mac.</li>
+          <li>Cómo configurar Claude y Antigravity para que te enseñen sin resolverte todo.</li>
+          <li>Errores de Python explicados, ejercicios graduados, trabajos prácticos y simulacros de parcial.</li>
+        </ul>
+        <div class="buy">
+          <div class="row"><span class="was">Antes $35.000</span><span class="price">$10.500</span></div>
+          <button type="button" class="btn block upsell-btn" data-upsell-toggle="2"><span class="add">+ Agregar a mi compra</span><span class="added">✓ Agregado · tocá para quitar</span></button>
+        </div>
+      </article>
+
+    </div>
+    <div class="cart-sum">
+      <div class="cart-info">
+        <span class="pay-total"><small>Total a pagar · ebook principal + <b data-upsell-count></b> agregadas</small><b class="cart-total" data-cart-total></b></span>
+        <span class="save">Ahorrás <b data-cart-savings></b></span>
+      </div>
+      <a class="btn cta" href="/checkout" data-checkout>Ir a pagar →</a>
+    </div>
+    <p class="combo">Se suman a tu compra del ebook principal y las recibís en tu mail al instante, con la misma <b>garantía de 7 días</b>.</p>
+  </div>
+</section>
+
+<section class="final sec-white">
+  <div class="wrap stack">
+    <p class="hand">Tu próximo examen puede ser distinto.</p>
+    <h2>Empezá hoy a estudiar con un método</h2>
+    <p class="lead">Ebook de 21 capítulos + anexo + Biblioteca de 125 pedidos + Mapas conceptuales con IA + Tutores IA por materia + Ejercicios con una foto + Flashcards con IA.</p>
+    <div class="priceline" style="justify-content:center"><span class="price">$16.990</span><span class="was">$29.990</span></div>
+    <span class="cuotas">o pagalo en <b>cuotas sin interés</b></span>
+    <a class="btn cta" href="/checkout" data-checkout>Quiero mi ebook + 5 bonus gratis →</a>
+    <div class="micro icons"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Garantía de 7 días</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><circle cx="12" cy="15.5" r="1.3"/></svg>Pago seguro</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 19.5h14"/></svg>Descarga inmediata</span></div>
+  </div>
+</section>
+
+<footer><div class="wrap brand-foot">
+  <p class="brand-links"><a href="https://www.instagram.com/estudia_conia/" target="_blank" rel="noopener">Instagram @estudia_conia</a>
+    · <a href="https://www.facebook.com/profile.php?id=61594861247711" target="_blank" rel="noopener">Facebook Estudia con IA</a></p>
+  <p class="brand-links contact">¿Dudas o querés usar la garantía? <a href="https://ig.me/m/estudia_conia" target="_blank" rel="noopener">Escribinos por Instagram</a>
+    <!-- CAMBIAR: si querés sumar WhatsApp o mail, descomentá y completá:
+    · <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+    · <a href="mailto:TU-MAIL">TU-MAIL</a> -->
+  </p>
+  <p>Esta guía no está asociada a OpenAI, Anthropic ni Google. ChatGPT, Claude, NotebookLM y Canva son marcas de sus respectivas empresas.</p>
+</div></footer>
+
+<dialog class="zoom" aria-label="Página del ebook ampliada"><button type="button" class="zoom-x" aria-label="Cerrar">✕</button><img alt=""></dialog>
+<script>
+(function(){
+  /* demo "probalo acá mismo" */
+  document.querySelectorAll('.try').forEach(function(t){
+    t.querySelectorAll('[data-try]').forEach(function(b){
+      b.addEventListener('click',function(){
+        t.querySelectorAll('[data-try]').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+        t.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.dataset.panel!==b.dataset.try});
+      });
+    });
+  });
+  /* simuladores interactivos */
+  var sx=document.querySelector('.simx');
+  if(sx){
+    function fit(c,h){var r=window.devicePixelRatio||1,w=c.clientWidth||300;c.width=w*r;c.height=h*r;c.style.height=h+'px';var x=c.getContext('2d');x.setTransform(r,0,0,r,0,0);return {x:x,w:w,h:h}}
+    var cv=document.getElementById('sx-od'),D=document.getElementById('sx-d'),O=document.getElementById('sx-o');
+    function eqm(dD,dO){var Q=(90+dD+dO)/1.8;return {Q:Q,P:100-Q+dD}}
+    function drawOD(){var G=fit(cv,280),dD=+D.value,dO=+O.value,x=G.x,w=G.w,h=G.h,m=34;
+      var X=function(q){return m+q/110*(w-m-10)},Y=function(p){return h-m-p/120*(h-m-10)};
+      x.strokeStyle='#c9c4f2';x.lineWidth=1.5;x.beginPath();x.moveTo(m,8);x.lineTo(m,h-m);x.lineTo(w-6,h-m);x.stroke();
+      x.fillStyle='#6b6890';x.font='600 12px Figtree,sans-serif';x.fillText('Precio',m+6,18);x.fillText('Cantidad',w-62,h-m+18);
+      function line(f,col,dash){x.setLineDash(dash||[]);x.strokeStyle=col;x.lineWidth=dash?2:3.5;x.beginPath();for(var q=0;q<=110;q+=2){var p=f(q);q?x.lineTo(X(q),Y(p)):x.moveTo(X(q),Y(p))}x.stroke();x.setLineDash([])}
+      if(dD||dO){line(function(q){return 100-q},'#d8d4ee',[6,5]);line(function(q){return 10+.8*q},'#d8d4ee',[6,5])}
+      line(function(q){return 100-q+dD},'#2f2c7a');line(function(q){return 10+.8*q-dO},'#ff6f59');
+      var E=eqm(dD,dO),E0=eqm(0,0);x.setLineDash([4,4]);x.strokeStyle='#2fbf9b';x.lineWidth=1.5;x.beginPath();x.moveTo(X(E.Q),Y(E.P));x.lineTo(X(E.Q),h-m);x.moveTo(X(E.Q),Y(E.P));x.lineTo(m,Y(E.P));x.stroke();x.setLineDash([]);
+      x.beginPath();x.arc(X(E.Q),Y(E.P),7,0,7);x.fillStyle='#2fbf9b';x.fill();
+      x.font='800 14px Figtree,sans-serif';x.fillStyle='#2f2c7a';x.fillText('Demanda',X(4),Y(96+dD)-6);x.fillStyle='#ff6f59';x.fillText('Oferta',X(88),Y(10+.8*88-dO)-10);
+      document.getElementById('sx-dv').textContent=dD>0?'aumenta':dD<0?'disminuye':'sin cambios';
+      document.getElementById('sx-ov').textContent=dO>0?'aumenta':dO<0?'disminuye':'sin cambios';
+      var dp=E.P-E0.P,dq=E.Q-E0.Q,f=function(v){return Math.abs(v)<.5?'se mantiene':v>0?'sube':'baja'};
+      document.getElementById('sx-eq').textContent='Precio $'+E.P.toFixed(0)+' · Cantidad '+E.Q.toFixed(0);
+      var t='Estás en el equilibrio: lo que se quiere vender es igual a lo que se quiere comprar. Mové una barra.';
+      if(dD||dO)t='El precio '+f(dp)+' ('+(dp>=0?'+':'')+dp.toFixed(0)+') y la cantidad '+f(dq)+' ('+(dq>=0?'+':'')+dq.toFixed(0)+'). '+(dD>0?'La demanda creció: hay más compradores. ':dD<0?'La demanda cayó: a cada precio se compra menos. ':'')+(dO>0?'La oferta creció: producir es más barato. ':dO<0?'La oferta cayó: producir cuesta más. ':'');
+      document.getElementById('sx-ex').textContent=t}
+    D.oninput=O.oninput=drawOD;
+    var P1=document.getElementById('sx-p1'),P2=document.getElementById('sx-p2');
+    function cell(g){var d=g.indexOf('A')>-1;return '<div style="border-radius:12px;padding:12px 6px;text-align:center;background:'+(d?'#fff6d8':'#e3f8ee')+';border:2px solid '+(d?'#f2c14e':'#2fbf9b')+'"><div style="width:28px;height:28px;border-radius:50%;margin:0 auto 6px;background:'+(d?'#f2c14e':'#4caf50')+'"></div><b style="font:800 18px Figtree,sans-serif;color:#22204c">'+g+'</b></div>'}
+    function drawPU(){var a=P1.value.split(''),b=P2.value.split(''),gs=[];
+      var h='<div style="display:grid;grid-template-columns:40px 1fr 1fr;gap:8px;align-items:center;margin-top:12px"><div></div>'+b.map(function(x){return '<div style="text-align:center;font:800 18px Figtree,sans-serif;color:#ff6f59">'+x+'</div>'}).join('');
+      a.forEach(function(x){h+='<div style="text-align:center;font:800 18px Figtree,sans-serif;color:#2f2c7a">'+x+'</div>';b.forEach(function(y){var g=[x,y].sort().join('');gs.push(g);h+=cell(g)})});
+      document.getElementById('sx-pg').innerHTML=h+'</div>';
+      var n=function(k){return gs.filter(function(g){return g===k}).length},dom=gs.filter(function(g){return g.indexOf('A')>-1}).length;
+      document.getElementById('sx-pr').innerHTML='<p class="simx-big">Resultados</p><p><b>Genotipos:</b> '+['AA','Aa','aa'].filter(n).map(function(k){return k+' '+n(k)*25+'%'}).join(' · ')+'</p><p><b>Fenotipos:</b> amarillas '+dom*25+'% · verdes '+(4-dom)*25+'%</p><div class="simx-bar"><i style="width:'+dom*25+'%"></i></div><p style="font-size:13.5px;color:#6b6890">Cada padre aporta un alelo al azar. Basta una A para que la semilla sea amarilla; solo aa da verde.</p>'}
+    P1.onchange=P2.onchange=drawPU;
+    var tc=document.getElementById('sx-to'),V=document.getElementById('sx-v'),A=document.getElementById('sx-a'),g=9.8,marks=[],anim=null,G3;
+    var nf=function(n){return n.toFixed(2).replace('.',',')};
+    function calc(){var v=+V.value,t=+A.value*Math.PI/180;return {v:v,t:t,R:v*v*Math.sin(2*t)/g,H:Math.pow(v*Math.sin(t),2)/(2*g),T:2*v*Math.sin(t)/g}}
+    function drawTO(tt){if(!G3||tt===undefined)G3=fit(tc,260);var x=G3.x,w=G3.w,h=G3.h,m=30,X=function(q){return m+q/95*(w-m-10)},Y=function(q){return h-m-q/48*(h-m-10)};x.clearRect(0,0,w,h);
+      x.fillStyle='#e3f8ee';x.fillRect(0,h-m,w,m);x.fillStyle='#6b6890';x.font='600 11px Figtree,sans-serif';for(var i=0;i<=90;i+=15)x.fillText(i+' m',X(i)-8,h-m+16);
+      function path(k,end){x.beginPath();for(var s=0;s<=end+1e-9;s+=k.T/80){var px=k.v*Math.cos(k.t)*s,py=k.v*Math.sin(k.t)*s-g*s*s/2;s?x.lineTo(X(px),Y(py)):x.moveTo(X(px),Y(py))}x.stroke()}
+      marks.forEach(function(k){x.strokeStyle='#d8d4ee';x.lineWidth=2;path(k,k.T)});
+      var k=calc(),end=tt===undefined?k.T:Math.min(tt,k.T);x.strokeStyle='#2f2c7a';x.lineWidth=3;x.setLineDash(tt===undefined?[6,6]:[]);path(k,end);x.setLineDash([]);
+      var px=k.v*Math.cos(k.t)*end,py=k.v*Math.sin(k.t)*end-g*end*end/2;x.beginPath();x.arc(X(px),Y(Math.max(py,0)),8,0,7);x.fillStyle='#ff6f59';x.fill();
+      document.getElementById('sx-vv').textContent=k.v+' m/s';document.getElementById('sx-av').textContent=A.value+'°';
+      document.getElementById('sx-tr').innerHTML='<p class="simx-big">Resultados</p><p><b style="color:#ff6f59">Alcance:</b> '+nf(k.R)+' m<br><small style="color:#6b6890">R = v²·sen(2θ) / g</small></p><p><b style="color:#2f2c7a">Altura máxima:</b> '+nf(k.H)+' m<br><small style="color:#6b6890">H = (v·senθ)² / 2g</small></p><p><b style="color:#1d8f74">Tiempo de vuelo:</b> '+nf(k.T)+' s<br><small style="color:#6b6890">T = 2·v·senθ / g</small></p>'}
+    V.oninput=A.oninput=function(){cancelAnimationFrame(anim);drawTO()};
+    document.getElementById('sx-go').onclick=function(){cancelAnimationFrame(anim);var k=calc(),t0=performance.now(),dur=Math.max(900,k.T*450);(function st(now){var p=Math.min(1,(now-t0)/dur);drawTO(p*k.T);if(p<1)anim=requestAnimationFrame(st);else marks.push(k)})(t0)};
+    document.getElementById('sx-cl').onclick=function(){marks=[];drawTO()};
+    var draws={od:drawOD,pu:drawPU,to:function(){drawTO()}};
+    sx.querySelectorAll('[data-sx]').forEach(function(b){b.addEventListener('click',function(){
+      sx.querySelectorAll('[data-sx]').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+      sx.querySelectorAll('[data-sxp]').forEach(function(p){p.hidden=p.dataset.sxp!==b.dataset.sx});
+      draws[b.dataset.sx]();})});
+    addEventListener('resize',function(){var on=sx.querySelector('[data-sx][aria-selected="true"]');draws[on.dataset.sx]()});
+    drawOD();drawPU();
+  }
+  /* páginas del ebook: tocar para agrandar */
+  var d=document.querySelector('dialog.zoom'); if(!d||!d.showModal) return;
+  var im=d.querySelector('img');
+  document.querySelectorAll('.pages img').forEach(function(i){
+    i.style.cursor='zoom-in';
+    i.addEventListener('click',function(){im.src=i.src;im.alt=i.alt;d.showModal();});
+  });
+  d.addEventListener('click',function(e){if(e.target!==im) d.close();});
+})();
+</script>
+
+<div class="sticky"><div class="p">$16.990<small>o en cuotas sin interés</small></div><a class="btn cta" href="/checkout" data-checkout>Comprar →</a></div>

@@ -9,7 +9,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Vigilar a los ganadores: apagar si llegan a USD 22 con una sola venta; subir un 20 % cada 2 días si vuelven a vender.
 - [ ] Duplicar el conjunto de tráfico a Instagram: solo Feed y Stories, USD 3 al día, con la imagen del regalo «GUÍA». Revisar en 3 o 4 días.
 - [ ] Actualizar la biografía de Instagram, fijar los posts y crear las historias destacadas ([[Redes sociales y contenido]]).
-- [ ] Landing: cambiar la sección «¿Por qué elegirnos?» por la v2 y moverla antes de la oferta. Opcional: añadir «finales de diciembre» en la barra superior (Output/2026-11-19 Landing - Por qué elegirnos v2.md).
+- [ ] Landing: pegar el HTML completo v2 en Impultienda (Output/2026-11-19 Landing completa v2.html) y comprobarlo en el celu. Antes, guardar una copia del HTML actual por si hay que volver atrás.
 - [ ] Unificar el precio tachado del ebook: $29.990 en la landing, $84.950 en Impultienda.
 - [ ] Revisar que todas las reseñas de la landing sean reales y tengan permiso.
 - [ ] Decidir: ¿el seguidor objetivo es a USD 0,30 o a USD 0,40? ¿El límite de un anuncio que vende es el CPA de equilibrio o USD 22?
