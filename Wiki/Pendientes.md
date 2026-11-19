@@ -9,6 +9,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Vigilar a los ganadores: apagar si llegan a USD 22 con una sola venta; subir un 20 % cada 2 días si vuelven a vender.
 - [ ] Duplicar el conjunto de tráfico a Instagram: solo Feed y Stories, USD 3 al día, con la imagen del regalo «GUÍA». Revisar en 3 o 4 días.
 - [ ] Actualizar la biografía de Instagram, fijar los posts y crear las historias destacadas ([[Redes sociales y contenido]]).
+- [ ] Añadir a la landing la sección «¿Por qué comprarnos?» (borrador en Output/2026-11-19 Landing - Por qué comprarnos.md). Antes, confirmar la garantía, la forma de entrega y si los pedidos sirven con la IA gratuita. Pedir opiniones a quienes ya compraron.
 - [ ] Decidir: ¿el seguidor objetivo es a USD 0,30 o a USD 0,40? ¿El límite de un anuncio que vende es el CPA de equilibrio o USD 22?
 - [ ] Compartir el carrusel de tesis en historias con la encuesta «¿Estás con la tesis? Sí / No».
 - [ ] Comprobar que funcionan las respuestas automáticas «GUÍA» y «TESIS».
