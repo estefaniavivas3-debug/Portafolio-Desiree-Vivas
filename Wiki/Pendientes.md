@@ -9,7 +9,9 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Vigilar a los ganadores: apagar si llegan a USD 22 con una sola venta; subir un 20 % cada 2 días si vuelven a vender.
 - [ ] Duplicar el conjunto de tráfico a Instagram: solo Feed y Stories, USD 3 al día, con la imagen del regalo «GUÍA». Revisar en 3 o 4 días.
 - [ ] Actualizar la biografía de Instagram, fijar los posts y crear las historias destacadas ([[Redes sociales y contenido]]).
-- [ ] Añadir a la landing la sección «¿Por qué comprarnos?» (borrador en Output/2026-11-19 Landing - Por qué comprarnos.md). Antes, confirmar la garantía, la forma de entrega y si los pedidos sirven con la IA gratuita. Pedir opiniones a quienes ya compraron.
+- [ ] Landing: cambiar la sección «¿Por qué elegirnos?» por la v2 y moverla antes de la oferta. Opcional: añadir «finales de diciembre» en la barra superior (Output/2026-11-19 Landing - Por qué elegirnos v2.md).
+- [ ] Unificar el precio tachado del ebook: $29.990 en la landing, $84.950 en Impultienda.
+- [ ] Revisar que todas las reseñas de la landing sean reales y tengan permiso.
 - [ ] Decidir: ¿el seguidor objetivo es a USD 0,30 o a USD 0,40? ¿El límite de un anuncio que vende es el CPA de equilibrio o USD 22?
 - [ ] Compartir el carrusel de tesis en historias con la encuesta «¿Estás con la tesis? Sí / No».
 - [ ] Comprobar que funcionan las respuestas automáticas «GUÍA» y «TESIS».
@@ -18,7 +20,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Anotar qué puntos de dolor se probaron sin ventas.
 - [~] CPA de equilibrio: unos $15.970 ARS con el ebook solo (comisiones del 6 %). Falta el tipo de cambio real que cobra la tarjeta por Meta para pasarlo a USD, y el porcentaje de compradores que toma adicionales ([[Estrategia de Meta Ads]]).
 - [x] Identificar el upsell y los order bumps (confirmado el 2026-11-16).
-- [ ] Confirmar cómo se leen los precios de la oferta ([[Estudia con IA]]).
+- [x] Confirmar cómo se leen los precios de la oferta (lo confirma la landing).
 - [ ] Revisar en Impultienda qué porcentaje de compradores toma cada order bump y el upsell.
 - [ ] Definir qué contenido publicar en Facebook e Instagram ([[Redes sociales y contenido]]).
 - [x] Confirmar la regla de los «6» de la asesora y el tono «de tú o de vos» (confirmado el 2026-11-16).
@@ -32,3 +34,4 @@ Fuentes:
 - Raw/2026-11-16 Comision pasarela y moneda Meta (respuesta).md
 - Raw/2026-11-16 Metricas del dia.md
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
+- Raw/2026-11-19 Landing HTML (extractos).md

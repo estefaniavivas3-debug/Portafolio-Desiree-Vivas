@@ -1,5 +1,7 @@
 # Landing: sección «¿Por qué comprarnos?» — 2026-11-19
 
+> **Reemplazado** por `2026-11-19 Landing - Por qué elegirnos v2.md`. Este borrador se hizo sin ver la página; la v2 parte del HTML real.
+
 Texto para pegar en la página de venta de **IA para Estudiar: Aprobá con ChatGPT y Claude**.
 Está escrito de **vos** y sin emojis, para que puedas añadir los que quieras.
 
