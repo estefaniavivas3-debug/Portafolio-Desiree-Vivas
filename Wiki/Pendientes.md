@@ -25,6 +25,8 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Definir qué contenido publicar en Facebook e Instagram ([[Redes sociales y contenido]]).
 - [x] Confirmar la regla de los «6» de la asesora y el tono «de tú o de vos» (confirmado el 2026-11-16).
 
+- [ ] Ebook de lactancia: pasar el índice para ajustar la descripción y definir páginas, bonus, precio y formación a mostrar ([[Guía de Lactancia Materna (ebook)]]).
+
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
