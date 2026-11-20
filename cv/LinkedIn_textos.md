@@ -6,7 +6,7 @@ QA Lead | Senior QA Automation Engineer | Playwright · TypeScript · API Testin
 ## Acerca de (About)
 QA Lead y Senior QA Automation Engineer con más de 7 años en Quality Assurance para telecomunicaciones, banca, fintech y comercio exterior.
 
-Hoy soy referente QA de tres células en Hitachi Digital Services (ex GlobalLogic), donde:
+Hoy soy Líder QA de tres células en Hitachi Digital Services (ex GlobalLogic), donde:
 • Diseño el plan de pruebas y lidero la estrategia de automatización (Playwright + TypeScript).
 • Guío a los equipos para construir calidad en todo el SDLC.
 • Hago mentoría y doy asistencia técnica a otros testers.
