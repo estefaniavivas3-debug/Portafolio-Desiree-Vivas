@@ -5,7 +5,7 @@
 **Antes de pasarlo, confirmá 3 cosas.** Los cambios 2, 3 y 4 dependen de tus respuestas:
 - **A.** ✅ Confirmado el 21/11: en Mercado Pago aparecen cuotas sin interés. El cambio 2 no se aplica.
 - **B.** ¿Se puede pagar con tarjeta **sin tener cuenta** de Mercado Pago?
-- **C.** ¿Vas a **sacar «Aprendé a programar»** del checkout?
+- **C.** ✅ Decidido el 21/11: «Aprendé a programar» se queda en el checkout. El cambio 4 no se aplica.
 
 Al final hay otra lista con lo que se cambia en el **panel de Impultienda**, no en el código.
 
@@ -44,7 +44,7 @@ En el bloque `.after-buy` de la oferta, cambiá el primer paso:
 Y en las dudas rápidas (`.quick-faq`) agregá al principio:
 `<details><summary>¿Necesito cuenta de Mercado Pago?</summary><p>No. Podés pagar con tu tarjeta de crédito o débito sin crear una cuenta. Si ya tenés cuenta, también podés usar tu dinero disponible.</p></details>`
 
-### Cambio 4: sacar «Aprendé a programar» (hacelo SOLO si te confirmo que lo saco del checkout)
+### Cambio 4: sacar «Aprendé a programar». NO APLICAR: Desiree decidió el 21/11 dejarlo en el checkout como upsell. Dejá la sección «más productos» como está.
 En `<section class="more" id="mas-productos">`:
 - Borrá entero el `<article class="prod">` que contiene `data-upsell-toggle="2"`.
 - Cambiá el texto `.lead` de esa sección por: «Se compra por separado y complementa el ebook principal: te enseña a responder como te evalúan, en escritos y orales.»
@@ -64,7 +64,7 @@ Usá la misma clase `guar-mini` que ya existe en el hero (con su ícono SVG de e
 1. **Descripción de «Aprendé a programar»:** reemplazá «Fotografía realista de un estudiante joven programando de…» por *«Instalá Python paso a paso y usá la IA como tutor para aprobar programación, con ejercicios y simulacros de parcial.»*
 2. **Contador «X personas están comprando ahora mismo»:** desactivalo.
 3. **Precio tachado del ebook:** cambialo de $84.950 a **$29.990**, igual que en la landing.
-4. **Productos adicionales del checkout:** dejá solo la **Guía de examen**. Volvé a poner el **Plan de estudio** después de la compra.
+4. **Productos adicionales del checkout:** quedan la Guía de examen y «Aprendé a programar» (decisión del 21/11). Falta decidir si el **Plan de estudio** vuelve a aparecer solo después de la compra.
 5. **Carritos abandonados:** activá la recuperación si Impultienda la tiene.
 6. **Mercado Pago:** revisá los pagos rechazados y pendientes, y si se puede, sumá transferencia.
 

@@ -40,7 +40,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Checkout: reemplazar la descripción de «Aprendé a programar» (es la instrucción de la imagen).
 - [ ] Checkout: desactivar el contador «X personas están comprando» o corregir el «1 personas».
 - [ ] Checkout: tachado del ebook a $29.990 y ocultar «Ahorrás $116.530».
-- [ ] Checkout: dejar solo la Guía de examen y volver a poner el Plan de estudio después de la compra.
+- [ ] Checkout: decidir si el Plan de estudio vuelve a aparecer solo después de la compra. «Aprendé a programar» se queda (decisión del 21/11).
 - [ ] Mercado Pago: revisar pagos rechazados y pendientes, comprobar el pago sin cuenta y ver si se puede sumar transferencia.
 
 Fuentes:
