@@ -57,9 +57,14 @@ Importes en USD. La columna «Ángulo / dolor» es mi interpretación a partir d
 - Hasta el 19/11 no hubo ventas nuevas: siguen siendo 2 en total.
 - Faltan las métricas: gasto por anuncio, CTR, visitas y pagos iniciados. Tampoco sé si el testeo nuevo incluye «Finales» v2 o el carrusel 2 de carreras, ni si ya se publicó la landing v2.
 
+## Actualización 21/11
+- Desiree dice que tiene «muchas visitas pero nada de compras». No hay cifras.
+- Por diagnosticar: de dónde vienen las visitas (campaña de tráfico o de ventas), cuántos pagos iniciados hay, si ya se publicó la landing v2 y si hay pagos pendientes o transferencias sin registrar.
+
 Relacionado: [[Meta Ads - resultados]], [[Estrategia de Meta Ads]], [[Cliente ideal de Estudia con IA]], [[Redes sociales y contenido]], [[Pendientes]].
 
 Fuentes:
 - Raw/2026-11-16 Metricas del dia.md
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
 - Raw/2026-11-19 Estado campañas (mensaje).md
+- Raw/2026-11-21 Visitas sin compras (mensaje).md
