@@ -27,6 +27,10 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 
 - [ ] Ebook de lactancia: pasar el índice para ajustar la descripción y definir páginas, bonus, precio y formación a mostrar ([[Guía de Lactancia Materna (ebook)]]).
 
+- [ ] Campaña de ventas: subir 2 o 3 creativos nuevos al lado del vídeo ganador («Finales» v2, carrusel 2 de carreras). Hoy depende de un solo anuncio.
+- [ ] Revisar la frecuencia del vídeo ganador: si llega a 2 o más, el público está saturado.
+- [ ] Usar un enlace distinto en la biografía del perfil para separar las visitas que vienen del perfil de las que vienen de los anuncios de ventas.
+
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
@@ -37,3 +41,4 @@ Fuentes:
 - Raw/2026-11-16 Metricas del dia.md
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
 - Raw/2026-11-19 Landing HTML (extractos).md
+- Raw/2026-11-21 Diagnostico visitas (respuesta).md

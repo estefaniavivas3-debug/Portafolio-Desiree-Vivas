@@ -60,6 +60,12 @@ Importes en USD. La columna «Ángulo / dolor» es mi interpretación a partir d
 ## Actualización 21/11
 - Desiree dice que tiene «muchas visitas pero nada de compras». No hay cifras.
 - Por diagnosticar: de dónde vienen las visitas (campaña de tráfico o de ventas), cuántos pagos iniciados hay, si ya se publicó la landing v2 y si hay pagos pendientes o transferencias sin registrar.
+- **Comprobado (21/11):** el pago funciona y el píxel registra la compra.
+- **Estado:** en la campaña de ventas queda **un solo conjunto, con un vídeo**: el que generó ventas. Los demás ya gastaron su presupuesto de prueba y se apagaron.
+- La campaña de tráfico lleva al perfil de Instagram o Facebook, que tiene los enlaces a la web.
+- **Conclusión:** las visitas a la web llegan sobre todo desde el perfil, a través de la campaña de tráfico. Son visitas de poca intención de compra. El motor de ventas depende de un solo anuncio.
+
+> ⚠️ **Posible contradicción:** según las métricas del 16 y 17/11, el carrusel «Buscá tu carrera» también tuvo 1 venta, igual que «Finales de diciembre». Ahora Desiree dice que el vídeo es «el único que generó ventas». ¿El carrusel se apagó, por ejemplo al llegar a USD 22 con una sola venta? ¿O la venta del carrusel fue de otra fuente?
 
 Relacionado: [[Meta Ads - resultados]], [[Estrategia de Meta Ads]], [[Cliente ideal de Estudia con IA]], [[Redes sociales y contenido]], [[Pendientes]].
 
@@ -68,3 +74,4 @@ Fuentes:
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
 - Raw/2026-11-19 Estado campañas (mensaje).md
 - Raw/2026-11-21 Visitas sin compras (mensaje).md
+- Raw/2026-11-21 Diagnostico visitas (respuesta).md
