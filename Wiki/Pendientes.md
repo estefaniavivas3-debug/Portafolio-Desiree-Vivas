@@ -37,7 +37,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Tener una 2.ª tarjeta o saldo prepago en Meta.
 - [ ] Confirmar en Impultienda cuántas ventas incluyeron la Guía de examen.
 
-- [ ] Checkout: reemplazar la descripción de «Aprendé a programar» (es la instrucción de la imagen).
+- [ ] Checkout: en el panel, cambiar el título de «Aprendé a programar» por «Aprendé a programar con IA» (igual que la portada) y reemplazar su descripción, que es la instrucción de la imagen, por: «Python paso a paso, la IA como tu tutor y simulacros de parcial. Ideal si cursás programación.»
 - [ ] Checkout: desactivar el contador «X personas están comprando» o corregir el «1 personas».
 - [ ] Checkout: tachado del ebook a $29.990 y ocultar «Ahorrás $116.530».
 - [ ] Checkout: decidir si el Plan de estudio vuelve a aparecer solo después de la compra. «Aprendé a programar» se queda (decisión del 21/11).
