@@ -29,6 +29,19 @@ Producto principal: **«IA para Estudiar: Aprobá con ChatGPT y Claude»**. Es u
 - Las ventas de USD 15,33 y 15,45 coinciden con **ebook + Guía de examen = $23.980 ARS** (a unos $1.553–1.564 por USD). Es un cálculo mío.
 - O sea, **2 de las 4 ventas por anuncios (50 %) sumaron la Guía de examen**. Es una tasa muy alta. Hay que confirmarlo en Impultienda.
 
+## Checkout (capturas del 21/11)
+- Pide mail, nombre, apellido y teléfono. Paga solo con Mercado Pago, redirigiendo a su web.
+- Los productos adicionales **no vienen marcados** (el total arranca en $16.990).
+- Ofrece 3 productos adicionales: Guía de examen, Aprendé a programar y Plan de estudio.
+- Problemas detectados (detalle en Output/2026-11-21 Revisión del checkout.md):
+  - La descripción de «Aprendé a programar» es la instrucción que se usó para generar la imagen («Fotografía realista de un estudiante joven programando…»).
+  - Hay un contador «X personas están comprando ahora mismo», que una vez dice «1 personas».
+  - Precio tachado de $84.950 y total tachado de $133.520 con «Ahorrás $116.530».
+
+> ⚠️ **Contradicción:** el **Plan de estudio** estaba anotado como upsell **solo después de la compra** (respuesta del 16/11 y comentario del código de la landing), pero el 21/11 aparece **en el checkout**. ¿Cuál es la configuración que querés?
+
+> ⚠️ **Precio tachado, confirmado en las capturas:** el checkout muestra $84.950 y la landing $29.990.
+
 ## Landing
 - Web: estudiaconia.online. La sección «¿Por qué elegirnos?» está en el puesto 11 de 15, después de la oferta.
 - Propuesta de mejora: [[Campaña de ventas 2026-11-16]] y Output/2026-11-19 Landing - Por qué elegirnos v2.md
@@ -51,3 +64,4 @@ Fuentes:
 - Raw/2026-11-16 Estructura del embudo (respuesta).md
 - Raw/2026-11-19 Landing HTML (extractos).md
 - Raw/2026-11-21 Analisis ventas y trafico.md
+- Raw/2026-11-21 Capturas checkout (transcripcion).md

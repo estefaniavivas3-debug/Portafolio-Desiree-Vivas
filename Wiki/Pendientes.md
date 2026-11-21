@@ -37,6 +37,12 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Tener una 2.ª tarjeta o saldo prepago en Meta.
 - [ ] Confirmar en Impultienda cuántas ventas incluyeron la Guía de examen.
 
+- [ ] Checkout: reemplazar la descripción de «Aprendé a programar» (es la instrucción de la imagen).
+- [ ] Checkout: desactivar el contador «X personas están comprando» o corregir el «1 personas».
+- [ ] Checkout: tachado del ebook a $29.990 y ocultar «Ahorrás $116.530».
+- [ ] Checkout: dejar solo la Guía de examen y volver a poner el Plan de estudio después de la compra.
+- [ ] Mercado Pago: revisar pagos rechazados y pendientes, comprobar el pago sin cuenta y ver si se puede sumar transferencia.
+
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
@@ -49,3 +55,4 @@ Fuentes:
 - Raw/2026-11-19 Landing HTML (extractos).md
 - Raw/2026-11-21 Diagnostico visitas (respuesta).md
 - Raw/2026-11-21 Analisis ventas y trafico.md
+- Raw/2026-11-21 Capturas checkout (transcripcion).md
