@@ -19,3 +19,11 @@ En la sección final (section.final), reemplazá el texto del párrafo .lead por
 CAMBIO 2: garantía junto al último botón de compra
 En la tarjeta de compra (.buy-card), dentro de .buy-info, justo debajo de <span class="cuotas">o pagalo en <b>cuotas sin interés</b></span>, agregá un bloque con la clase guar-mini (la misma que ya existe en el hero, con el mismo ícono SVG de escudo copiado del hero) y este texto:
 <b>Garantía de 7 días.</b> Si no te sirve, te devolvemos el 100%. Lo recibís al instante en tu mail.
+
+CAMBIO 3: título principal (hero)
+En <header class="hero">, reemplazá el h1 actual:
+<h1>Aprendé cualquier cosa en menos tiempo, con la IA como <em>tu tutor personal</em>.</h1>
+por:
+<h1>Llegá a tus finales preparado, con la IA como <em>tu tutor personal</em>.</h1>
+Y reemplazá el párrafo .lead que está justo debajo por:
+<p class="lead">Aunque estudies y trabajes. Usá ChatGPT y Claude para entender, resumir y practicar como en el examen, no para copiar. Con <span class="mark">+200 pedidos listos para copiar y pegar</span>.</p>
