@@ -34,7 +34,7 @@ Producto principal: **«IA para Estudiar: Aprobá con ChatGPT y Claude»**. Es u
 - **Cuotas sin interés: confirmado** (21/11). Lo que promete la landing es real.
 - Los productos adicionales **no vienen marcados** (el total arranca en $16.990).
 - Ofrece 3 productos adicionales: Guía de examen, Aprendé a programar y Plan de estudio.
-- **Decisión (21/11):** «Aprendé a programar» se queda en el checkout como upsell. La descripción sigue teniendo que corregirse.
+- **Decisión (21/11):** «Aprendé a programar» se queda en el checkout como upsell (confirmado). La descripción sigue teniendo que corregirse.
 - Problemas detectados (detalle en Output/2026-11-21 Revisión del checkout.md):
   - La descripción de «Aprendé a programar» es la instrucción que se usó para generar la imagen («Fotografía realista de un estudiante joven programando…»).
   - Hay un contador «X personas están comprando ahora mismo», que una vez dice «1 personas».
@@ -69,3 +69,4 @@ Fuentes:
 - Raw/2026-11-21 Capturas checkout (transcripcion).md
 - Raw/2026-11-21 Cuotas Mercado Pago (respuesta).md
 - Raw/2026-11-21 Aprende a programar en checkout (respuesta).md
+- Raw/2026-11-21 Aclaracion upsell.md
