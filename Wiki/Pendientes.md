@@ -12,7 +12,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Landing: pegar el HTML completo v2 en Impultienda (Output/2026-11-19 Landing completa v2.html) y comprobarlo en el celu. Antes, guardar una copia del HTML actual por si hay que volver atrás.
 - [ ] Unificar el precio tachado del ebook: $29.990 en la landing, $84.950 en Impultienda.
 - [ ] Revisar que todas las reseñas de la landing sean reales y tengan permiso.
-- [ ] Decidir: ¿el seguidor objetivo es a USD 0,30 o a USD 0,40? ¿El límite de un anuncio que vende es el CPA de equilibrio o USD 22?
+- [~] Decidir: el objetivo por seguidor se tomó como USD 0,40 en el informe del 21/11 (falta confirmarlo). ¿El límite de un anuncio que vende es el CPA de equilibrio o USD 22?
 - [ ] Compartir el carrusel de tesis en historias con la encuesta «¿Estás con la tesis? Sí / No».
 - [ ] Comprobar que funcionan las respuestas automáticas «GUÍA» y «TESIS».
 - [ ] Medir otra vez el carrusel de tesis el 17 o 18/11.
@@ -31,6 +31,12 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Revisar la frecuencia del vídeo ganador: si llega a 2 o más, el público está saturado.
 - [ ] Usar un enlace distinto en la biografía del perfil para separar las visitas que vienen del perfil de las que vienen de los anuncios de ventas.
 
+- [ ] **Urgente:** averiguar por qué 7 de 8 personas no terminan de pagar. Revisar en Mercado Pago los pagos **rechazados** y pendientes, y unificar el precio tachado ($29.990 en la landing frente a $84.950 en Impultienda) ([[Campaña de ventas 2026-11-18]]).
+- [ ] Activar la recuperación de carritos abandonados en Impultienda.
+- [ ] Sumar 2 conjuntos: vídeo 03 «con Dios» y carrusel «Materias filtro».
+- [ ] Tener una 2.ª tarjeta o saldo prepago en Meta.
+- [ ] Confirmar en Impultienda cuántas ventas incluyeron la Guía de examen.
+
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
@@ -42,3 +48,4 @@ Fuentes:
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
 - Raw/2026-11-19 Landing HTML (extractos).md
 - Raw/2026-11-21 Diagnostico visitas (respuesta).md
+- Raw/2026-11-21 Analisis ventas y trafico.md

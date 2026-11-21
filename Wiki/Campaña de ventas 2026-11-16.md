@@ -65,7 +65,7 @@ Importes en USD. La columna «Ángulo / dolor» es mi interpretación a partir d
 - La campaña de tráfico lleva al perfil de Instagram o Facebook, que tiene los enlaces a la web.
 - **Conclusión:** las visitas a la web llegan sobre todo desde el perfil, a través de la campaña de tráfico. Son visitas de poca intención de compra. El motor de ventas depende de un solo anuncio.
 
-> ⚠️ **Posible contradicción:** según las métricas del 16 y 17/11, el carrusel «Buscá tu carrera» también tuvo 1 venta, igual que «Finales de diciembre». Ahora Desiree dice que el vídeo es «el único que generó ventas». ¿El carrusel se apagó, por ejemplo al llegar a USD 22 con una sola venta? ¿O la venta del carrusel fue de otra fuente?
+- **Aclarado (informe del 21/11):** «el único que generó ventas» se refería a la campaña del 18/11 (vídeo Derecho). Esta campaña del 16/11 cerró con USD 41,15 gastados y 2 ventas (USD 21,88). Continúa en [[Campaña de ventas 2026-11-18]].
 
 Relacionado: [[Meta Ads - resultados]], [[Estrategia de Meta Ads]], [[Cliente ideal de Estudia con IA]], [[Redes sociales y contenido]], [[Pendientes]].
 
@@ -75,3 +75,4 @@ Fuentes:
 - Raw/2026-11-19 Estado campañas (mensaje).md
 - Raw/2026-11-21 Visitas sin compras (mensaje).md
 - Raw/2026-11-21 Diagnostico visitas (respuesta).md
+- Raw/2026-11-21 Analisis ventas y trafico.md

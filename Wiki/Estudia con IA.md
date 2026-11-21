@@ -25,6 +25,10 @@ Producto principal: **«IA para Estudiar: Aprobá con ChatGPT y Claude»**. Es u
 
 (La landing confirma la forma de leer los precios: los valores de los bonos y los precios de los order bumps coinciden.)
 
+## Order bump: se toma mucho
+- Las ventas de USD 15,33 y 15,45 coinciden con **ebook + Guía de examen = $23.980 ARS** (a unos $1.553–1.564 por USD). Es un cálculo mío.
+- O sea, **2 de las 4 ventas por anuncios (50 %) sumaron la Guía de examen**. Es una tasa muy alta. Hay que confirmarlo en Impultienda.
+
 ## Landing
 - Web: estudiaconia.online. La sección «¿Por qué elegirnos?» está en el puesto 11 de 15, después de la oferta.
 - Propuesta de mejora: [[Campaña de ventas 2026-11-16]] y Output/2026-11-19 Landing - Por qué elegirnos v2.md
@@ -46,3 +50,4 @@ Fuentes:
 - Raw/2026-11-16 Oferta Impultienda (pegado).md
 - Raw/2026-11-16 Estructura del embudo (respuesta).md
 - Raw/2026-11-19 Landing HTML (extractos).md
+- Raw/2026-11-21 Analisis ventas y trafico.md

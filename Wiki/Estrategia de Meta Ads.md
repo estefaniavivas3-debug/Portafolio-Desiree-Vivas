@@ -26,6 +26,11 @@ Estas son las reglas de prueba y apagado que sigo con mi asesora, según una gu�
 - Impultienda no avisa de las ventas por transferencia: hay que revisarlas a mano.
 
 > Confirmado por Desiree: es la misma regla que sigue con su asesora (6 USD → CTR; 10 USD → ventas).
+## Objetivo de rentabilidad (informe del 21/11)
+- **ROAS objetivo: más de 1,2**, es decir, cada venta a menos de unos USD 9. El punto de equilibrio está en un ROAS de 1,06 aprox. (USD 10,3), después de las comisiones del 6 %. El 1,2 ya deja ganancia.
+- Aprendizaje: **los vídeos venden más que las imágenes y los carruseles.**
+- Aprendizaje: un ángulo apagado en un testeo puede ganar en otro (vídeo Derecho). Antes de descartar un ángulo del todo, conviene probarlo con otro creativo.
+
 ## CPA de equilibrio
 Comisiones por venta: **Impultienda 5 %** + **pasarela de pago ~1 %** = **~6 %**. Lo que queda por cada producto:
 
@@ -54,3 +59,4 @@ Fuentes:
 - Raw/2026-11-16 Comision pasarela y moneda Meta (respuesta).md
 - Raw/2026-11-16 Metricas del dia.md
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
+- Raw/2026-11-21 Analisis ventas y trafico.md

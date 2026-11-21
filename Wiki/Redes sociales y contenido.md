@@ -13,6 +13,25 @@ Publico en Instagram, Facebook y TikTok con dos frentes: mi cuenta de puericultu
 - Respuestas automáticas por mensaje: palabras clave **«GUÍA»** y **«TESIS»** (pendiente comprobar que funcionan).
 - Cuenta de Instagram: **@estudia_conia**, con 30 seguidores el 17/11. Web: estudiaconia.online.
 
+### Tráfico pagado al perfil: resultados (al 21/11, todas apagadas)
+| Campaña | Gasto (USD) | Clics | Seguidores | Coste por seguidor |
+|---|---|---|---|---|
+| Tráfico (la anterior) | 7,66 | 448 | s/d | — |
+| Tráfico 16/11 | 6,17 | 132 | 7 | 0,88 |
+| Tráfico 19/11 (solo IG Feed y Stories, imagen «GUÍA», USD 3 al día) | 5,09 | 271 | 6 | 0,85 |
+- Los clics son muy baratos (USD 0,02), pero pocos se convierten en seguidores. Cada seguidor sale a USD 0,85, más del doble del objetivo de USD 0,40. Se apagó el 21/11.
+- **Aprendizaje:** el clic barato no alcanza. Si se vuelve a probar: un vídeo o Reel, o promocionar una publicación que ya funcionó, midiendo seguidores y no clics.
+- Seguidores de @estudia_conia: 30 (16/11) → 36 (19/11) → 42 (21/11).
+
+### Orgánico, calendario del 19 al 25/11
+| Publicación | Fecha | Vistas | Cuentas | Guardados |
+|---|---|---|---|---|
+| Carrusel «Materias filtro» | 19/11 21:00 | 13 | 6 | 0 |
+| Flyer del ebook | 20/11 12:00 | 6 | 3 | 1 |
+| Historia regalo «GUÍA» | 21/11 12:00 | s/d | | |
+- Próximas: dom 22 carrusel «Otras carreras» · lun 23 Reel «Finales» · mar 24 imagen «Regalo» · mié 25 Reel «Derecho».
+- Facebook: todo programado. Instagram: lo publica Claude en cada horario.
+
 ### Plan para el perfil de Instagram (17/11)
 - **Biografía propuesta:** «Te enseño a estudiar con IA 📚 Resúmenes, simulacros y planes en minutos. 🎁 Escribime GUÍA y te regalo 5 pedidos 👇» + enlace a estudiaconia.online.
 - **Fijar arriba:** el carrusel de tesis y el post del regalo.
@@ -31,3 +50,4 @@ Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Metricas del dia.md
 - Raw/2026-11-17 Metricas acumuladas 16-17.md
+- Raw/2026-11-21 Analisis ventas y trafico.md
