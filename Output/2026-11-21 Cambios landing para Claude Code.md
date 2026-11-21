@@ -3,7 +3,7 @@
 **Cómo usarlo:** copiá desde «PROMPT» hasta el final y pegáselo a Claude Code, junto con el HTML de la landing que está publicado ahora. Si publicaste la v2, es `Output/2026-11-19 Landing completa v2.html`.
 
 **Antes de pasarlo, confirmá 3 cosas.** Los cambios 2, 3 y 4 dependen de tus respuestas:
-- **A.** Cuando alguien paga en Mercado Pago, ¿le aparecen **cuotas sin interés** de verdad? (Probalo hasta la pantalla de cuotas.)
+- **A.** ✅ Confirmado el 21/11: en Mercado Pago aparecen cuotas sin interés. El cambio 2 no se aplica.
 - **B.** ¿Se puede pagar con tarjeta **sin tener cuenta** de Mercado Pago?
 - **C.** ¿Vas a **sacar «Aprendé a programar»** del checkout?
 
@@ -28,7 +28,7 @@ En la sección `<section class="offer" id="oferta">`, dentro de `.bonus-grid`, r
 
 Cambiá también el `alt` de cada imagen para que diga el número nuevo («Bonus 1: …»). En la sección final (`section.final`), reordená la lista del párrafo `.lead` en ese mismo orden: «Ebook de 21 capítulos + anexo + Ejercicios con una foto + Biblioteca de 125 pedidos + Mapas conceptuales con IA + Tutores IA por materia + Flashcards con IA.»
 
-### Cambio 2: cuotas (hacelo SOLO si te digo que NO hay cuotas sin interés)
+### Cambio 2: cuotas. NO APLICAR: Desiree confirmó el 21/11 que en Mercado Pago aparecen cuotas sin interés. Dejá todo como está.
 Reemplazá todas las menciones a «cuotas sin interés» por un texto que no prometa cuotas:
 - `<span class="cuotas">o pagalo en <b>cuotas sin interés</b></span>` (aparece 3 veces) → `<span class="cuotas">Pagá con <b>tarjeta, débito o dinero en Mercado Pago</b></span>`
 - `<small class="pm-s">Cuotas sin interés</small>` (aparece 2 veces) → borralo.

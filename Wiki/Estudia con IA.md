@@ -31,6 +31,7 @@ Producto principal: **«IA para Estudiar: Aprobá con ChatGPT y Claude»**. Es u
 
 ## Checkout (capturas del 21/11)
 - Pide mail, nombre, apellido y teléfono. Paga solo con Mercado Pago, redirigiendo a su web.
+- **Cuotas sin interés: confirmado** (21/11). Lo que promete la landing es real.
 - Los productos adicionales **no vienen marcados** (el total arranca en $16.990).
 - Ofrece 3 productos adicionales: Guía de examen, Aprendé a programar y Plan de estudio.
 - Problemas detectados (detalle en Output/2026-11-21 Revisión del checkout.md):
@@ -65,3 +66,4 @@ Fuentes:
 - Raw/2026-11-19 Landing HTML (extractos).md
 - Raw/2026-11-21 Analisis ventas y trafico.md
 - Raw/2026-11-21 Capturas checkout (transcripcion).md
+- Raw/2026-11-21 Cuotas Mercado Pago (respuesta).md
