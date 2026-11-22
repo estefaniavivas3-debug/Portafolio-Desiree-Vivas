@@ -48,6 +48,8 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Contenido orgánico: subir los vídeos ganadores (Derecho, «con Dios», Finales) como Reels orgánicos.
 - [ ] Domingos: guiones de la semana con Claude, producción en CapCut y medición de envíos, guardados y mensajes «GUÍA».
 
+- [ ] Web propia sin depender de Impultienda: decidir qué productos entran, si hay una o dos marcas y el dominio, y empezar por la fase 1 (catálogo propio con el checkout de Impultienda).
+
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md
@@ -61,3 +63,4 @@ Fuentes:
 - Raw/2026-11-21 Diagnostico visitas (respuesta).md
 - Raw/2026-11-21 Analisis ventas y trafico.md
 - Raw/2026-11-21 Capturas checkout (transcripcion).md
+- Raw/2026-11-22 Pagina web propia (mensaje).md
