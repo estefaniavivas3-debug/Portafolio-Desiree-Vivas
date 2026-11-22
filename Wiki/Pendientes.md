@@ -43,6 +43,11 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Checkout: decidir si el Plan de estudio vuelve a aparecer solo después de la compra. «Aprendé a programar» se queda (decisión del 21/11).
 - [ ] Mercado Pago: revisar pagos rechazados y pendientes, comprobar el pago sin cuenta y ver si se puede sumar transferencia.
 
+- [ ] Contenido orgánico: comprobar si la cuenta tiene **Trial Reels**.
+- [ ] Contenido orgánico: grabar el primer Reel «te muestro en la pantalla» (pedido de parciales viejos → simulacro).
+- [ ] Contenido orgánico: subir los vídeos ganadores (Derecho, «con Dios», Finales) como Reels orgánicos.
+- [ ] Domingos: guiones de la semana con Claude, producción en CapCut y medición de envíos, guardados y mensajes «GUÍA».
+
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
 - Raw/2026-11-16 Aclaraciones entrevista.md

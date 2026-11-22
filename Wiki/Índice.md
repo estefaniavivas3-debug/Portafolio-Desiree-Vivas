@@ -25,6 +25,7 @@ Mapa del segundo cerebro de Desiree Vivas: quién es, su negocio Estudia con IA,
 - [[Puericultura y lactancia materna]]
 - [[Guía de Lactancia Materna (ebook)]]
 - [[Redes sociales y contenido]]
+- [[Contenido orgánico con IA]]
 - [[Cómo escribo]]
 
 ## Acción

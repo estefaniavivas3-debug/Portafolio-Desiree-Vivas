@@ -8,6 +8,7 @@ Publico en Instagram, Facebook y TikTok con dos frentes: mi cuenta de puericultu
 - También subo contenido orgánico.
 
 ## Estudia con IA
+- **Desde el 22/11 no hay presupuesto para Meta.** Plan orgánico: [[Contenido orgánico con IA]].
 - Contenido programado con Claude, sobre los mismos temas que vende el ebook.
 - **Carrusel de tesis** (Instagram, 15/11 a las 21:28): 12 visualizaciones, 4 cuentas alcanzadas, 1 guardado, 0 compartidos, 2 interacciones. Se publicó de noche y lleva pocas horas; volver a medir en 2 o 3 días. En Facebook se publicó el 15/11 a las 21:00 (8 imágenes).
 - Respuestas automáticas por mensaje: palabras clave **«GUÍA»** y **«TESIS»** (pendiente comprobar que funcionan).
