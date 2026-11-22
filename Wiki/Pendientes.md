@@ -48,7 +48,7 @@ Tareas abiertas que salieron de la entrevista inicial. La más urgente: preparar
 - [ ] Contenido orgánico: subir los vídeos ganadores (Derecho, «con Dios», Finales) como Reels orgánicos.
 - [ ] Domingos: guiones de la semana con Claude, producción en CapCut y medición de envíos, guardados y mensajes «GUÍA».
 
-- [ ] Web propia sin depender de Impultienda: decidir qué productos entran, si hay una o dos marcas y el dominio, y empezar por la fase 1 (catálogo propio con el checkout de Impultienda).
+- [ ] Tienda propia de ebooks: elegir el nombre de la marca paraguas, pasar la lista de ebooks con sus categorías y crear el repositorio nuevo en GitHub ([[Tienda propia de ebooks (proyecto)]]).
 
 Fuentes:
 - Raw/2026-11-16 Entrevista inicial.md
@@ -64,3 +64,4 @@ Fuentes:
 - Raw/2026-11-21 Analisis ventas y trafico.md
 - Raw/2026-11-21 Capturas checkout (transcripcion).md
 - Raw/2026-11-22 Pagina web propia (mensaje).md
+- Raw/2026-11-22 Tienda multi-categoria (mensaje).md

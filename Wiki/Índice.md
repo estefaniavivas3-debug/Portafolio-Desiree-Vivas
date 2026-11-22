@@ -22,6 +22,7 @@ Mapa del segundo cerebro de Desiree Vivas: quién es, su negocio Estudia con IA,
 - [[Campaña de ventas 2026-11-18]]
 
 ## Proyectos y contenido
+- [[Tienda propia de ebooks (proyecto)]]
 - [[Puericultura y lactancia materna]]
 - [[Guía de Lactancia Materna (ebook)]]
 - [[Redes sociales y contenido]]
