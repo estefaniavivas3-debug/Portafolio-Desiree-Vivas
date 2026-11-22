@@ -17,8 +17,16 @@ Proyecto desde el 22/11/2026: una web propia, sin depender de Impultienda, para 
 - Legal en Argentina: botón de arrepentimiento, términos y condiciones, política de privacidad y facturación (consultar con contador).
 - Plan completo: Output/2026-11-22 Plan tienda propia de ebooks.md
 
+## Seguridad y cobros (propuesta del 22/11)
+- **Mercado Pago Checkout Pro:** la tarjeta la procesa Mercado Pago (PCI DSS) y nunca pasa por la web. Acepta crédito con cuotas, débito, dinero en cuenta y efectivo. Más adelante se puede pasar a Checkout Bricks (formulario dentro de la web).
+- **Entrega segura:** el precio lo pone el servidor; se verifica la firma del aviso de pago y se consulta el pago a Mercado Pago (estado, monto y moneda); cada pago se entrega una sola vez; los PDF van en un almacén privado con links que vencen.
+- **Herramientas propuestas:** Netlify o Vercel (web y funciones), Supabase (pedidos y PDF privados), Resend o Brevo (mails), GitHub privado.
+- **Cuentas:** todas con verificación en 2 pasos. Las claves solo en variables secretas del hosting, nunca en el chat.
+- Detalle: Output/2026-11-22 Tienda propia - seguridad y cobros.md
+
 Relacionado: [[Estudia con IA]], [[Objetivos]], [[Pendientes]].
 
 Fuentes:
 - Raw/2026-11-22 Pagina web propia (mensaje).md
 - Raw/2026-11-22 Tienda multi-categoria (mensaje).md
+- Raw/2026-11-22 Seguridad y cobros (mensaje).md
